@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="blog.aspx.cs" Inherits="service_Default" %>

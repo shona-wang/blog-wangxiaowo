@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+		
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<meta charset="UTF-8">
+		<title>店小二详情</title>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">店小二详情</h1>
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+				<span class="mui-icon mui-icon-left-nav"></span>返回
+			</button>
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left padL10">
+				关闭
+			</button>
+			<a class="mui-icon mui-icon-more mui-pull-right"></a>
+		</header>
+		<section class="mui-content">
+			<h4 class="textC marT20">欧阳菲菲</h4>
+			<h4 class="textC padT10">15947894568</h4>
+			<ul class="mui-table-view marT20">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id='confirmBtn'>
+						从门店中移除 欧阳菲菲
+					</a>
+				</li>
+			</ul>
+			<p class="wid90 marAuto marT10">!被移除的店小二，将不能再进入门店，但跟他相关的数据不会被删除。</p>
+			<div class="mui-card marT20">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<p class="c33">由店掌柜 云海 发出邀请！</p>
+					</div>
+				</div>
+				<div class="mui-card-footer" style="justify-content:flex-end;">
+					<p class="textR">2016-03-10 13:46</p>
+				</div>
+			</div>
+			<div class="mui-card">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<p class="c33"> 欧阳菲菲 确认加入门店，成为店小二</p>
+					</div>
+				</div>
+				<div class="mui-card-footer" style="justify-content:flex-end;">
+					<p class="textR">2016-03-11 13:46</p>
+				</div>
+			</div>		
+			<button class="mui-btn mui-btn-primary mui-btn-block marT20 wid90 marAuto" onclick="location.href='more-worker.html'">返回</button>
+		</section>	
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			document.getElementById("confirmBtn").addEventListener('tap', function() {
+				var btnArray = ['确定', '取消'];
+				mui.confirm('被移除的店小二，将不能再进入门店，但跟他相关的数据不会被删除。', '欧阳菲菲将从门店中移除', btnArray, function(e) {
+//					if (e.index == 1) {
+//						info.innerText = '你刚确认MUI是个好框架';
+//					} else {
+//						info.innerText = 'MUI没有得到你的认可，继续加油'
+//					}
+				})
+			});
+		</script>
+	</body>
+</html>

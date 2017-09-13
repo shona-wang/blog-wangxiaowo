@@ -1,0 +1,47 @@
+前台调用： <a class="mini-button" onclick="gjsearch()" visible="false">高级查询</a>
+	
+
+	脚本：
+ function SeelctCx() {
+        //debugger;
+        var columns = _getColumns();
+        mini.open({
+            url: "../../WindowsAspx/GaoJiChaXun.aspx?Cols=" + columns,
+            title: "高级查询", width: 800, height: 300,
+            ondestroy: function() {
+                var iframe = this.getIFrameEl();
+                Where = iframe.contentWindow.GetData(); //调用子页面的函数
+                grid.load({Where:Where});
+            }
+        });
+    }
+
+    function _getColumns() {
+        var columns = grid.getBottomColumns();
+        function getColumns(columns) {
+            columns = columns.clone();
+            for (var i = columns.length - 1; i >= 0; i--) {
+                var column = columns[i];
+                if (!column.field) {
+                    columns.removeAt(i);
+                } else {
+                    var c = { header: column.header, field: column.field };
+                    columns[i] = c;
+                }
+            }
+            return columns;
+        }
+        //debugger;
+        var columns = getColumns(columns);
+        var json = mini.encode(columns);
+        return json;
+    }
+
+
+
+后台方法：
+    public void jszd()
+    {
+        string json = Server.UrlDecode(Request["Cols"]);
+        MyPublicMin.WriteStr(json);
+    }

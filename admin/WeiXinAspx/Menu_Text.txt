@@ -1,0 +1,9 @@
+﻿[
+   {"POWERID":"11","TEXT":"功能设置","PARENTID":"00","URL":"","IMAGE":"icon-addfolder","ICONCLS":"icon-addfolder"},
+   {"POWERID":"22","TEXT":"关注时信息","PARENTID":"11","URL":"WeiXin_MessageWelcome/WeiXin_MessageWelcome_Edit.aspx","IMAGE":"icon-addfolder","ICONCLS":"icon-addfolder"},
+   {"POWERID":"33","TEXT":"access_token获取","PARENTID":"11","URL":"WeiXin_AccountContro/access_token_index.aspx","IMAGE":"icon-addfolder","ICONCLS":"icon-addfolder"},
+   {"POWERID":"44","TEXT":"菜单设置","PARENTID":"11","URL":"","IMAGE":"icon-addfolder","ICONCLS":"icon-addfolder"},
+   {"POWERID":"55","TEXT":"分组设置","PARENTID":"11","URL":"","IMAGE":"icon-addfolder","ICONCLS":"icon-addfolder"},
+   {"POWERID":"66","TEXT":"人员设置","PARENTID":"11","URL":"","IMAGE":"icon-addfolder","ICONCLS":"icon-addfolder"},
+   {"POWERID":"77","TEXT":"微店设置","PARENTID":"11","URL":"","IMAGE":"icon-addfolder","ICONCLS":"icon-addfolder"}
+]

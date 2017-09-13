@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+		
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<meta charset="UTF-8">
+		<title>转让</title>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">转让</h1>
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+				<span class="mui-icon mui-icon-left-nav"></span>返回
+			</button>
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left padL10">
+				关闭
+			</button>
+			<a class="mui-icon mui-icon-more mui-pull-right"></a>
+		</header>
+		<section class="mui-content">
+			<div class="mui-card">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<p class="c33">你可以把店掌柜身份移交给店小二，转让之后你将不再拥有门店的管理权限。</p>
+						<p class="c33">注意：店掌柜不能转让给邀请中的店小二。</p>
+					</div>
+				</div>
+			</div>
+			<form class="mui-input-group loginPage">
+				<div class="mui-input-row">
+					<label for="">转让给</label>
+					<input type="text" class="mui-input" placeholder="请输入转让人" />
+				</div>
+				<div class="mui-input-row">
+					<label for="">装让给</label>
+					<input type="text" class="mui-input" placeholder="请输入转让人" />
+				</div>
+			</form>
+			<button class="mui-btn-block mui-btn-primary marAuto marT20 wid90" type="button" onclick="location.href='more-editShop.html'">返回</button>
+			<button id='confirmBtn' type="button" class="mui-btn mui-btn-blue mui-btn-outlined disB marAuto">成功后显示信息</button>
+			
+		</section>	
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+		document.getElementById("confirmBtn").addEventListener('tap', function() {
+				var btnArray = ['取消', '确定'];
+				mui.confirm('转让之后你将不再拥有门店的管理权限。', '你将店掌柜身份转让给欧阳', btnArray, function(e) {
+//					if (e.index == 1) {
+//						info.innerText = '你刚确认MUI是个好框架';
+//					} else {
+//						info.innerText = 'MUI没有得到你的认可，继续加油'
+//					}
+				})
+		});
+		</script>
+	</body>
+</html>

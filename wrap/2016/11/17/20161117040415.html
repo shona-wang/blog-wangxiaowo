@@ -1,0 +1,224 @@
+<p>
+	<span style="font-family:Verdana, Arial, Helvetica, sans-serif;font-size:13px;line-height:19.5px;background-color:#FEFEF2;">
+	<h1 class="postTitle" style="text-align:center;">
+		<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/wxiaona/p/5757596.html">CSS样式分离之再分离</a>
+	</h1>
+	<p>
+		<span style="font-size:14px;font-family:'Microsoft YaHei';">CSS本身就代表着精简与重用。例如我们可以设置一个如下的样式：</span>
+	</p>
+	<div class="zxx_code" style="margin:0px;padding:0px;">
+<pre>.example{color:red;}</pre>
+	</div>
+	<p>
+		<span style="font-size:14px;font-family:'Microsoft YaHei';">所有想让文字显示红色的标签都可以应用这个样式，这比10年前使用font标签，将color样式写在font标签上（尤其标签多时）要精简很多代码，代码可读性也更佳。</span>
+	</p>
+	<p>
+		<span style="font-size:14px;font-family:'Microsoft YaHei';">CSS样式分离，我一般指的是“以单独的CSS文件将CSS样式分离出来”，此处的重用多针对不同页面的重用，就是说，一个样式文件，可以多个页面使用，这对于一些公共样式的重构是很有用的。当然，对于一些重要的页面，例如淘宝首页，直接将CSS嵌在了页面头部，其降低链接请求的重要性要大于样式的重用。</span>
+	</p>
+	<p>
+		<span style="font-size:14px;font-family:'Microsoft YaHei';">以上估计大家都是很熟悉与常用的，我一般不会拿一些众所周知的白蜡拿来嚼的。本文会展示一些新的东西，关于CSS样式分离再分离。本文核心不在于展示如果分离，而是传达一种“库”与“CSS高度重用”的概念，同时也是为后面的文章“我是如何对项目CSS进行架构”做铺垫的。</span>
+	</p>
+<span style="font-size:14px;font-family:'Microsoft YaHei';">
+	<h3>
+		<span style="font-size:16px;">二、CSS样式分离之再分离</span>
+	</h3>
+</span></span>
+	<h1 class="postTitle" style="text-align:center;">
+		<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/wxiaona/p/5757596.html"></a>
+	</h1>
+	<p>
+		<br />
+	</p>
+	<div class="zxx_code" style="margin:0px;padding:0px;">
+<pre></pre>
+	</div>
+	<p>
+		<br />
+	</p>
+	<p>
+		<br />
+	</p>
+	<p>
+		<br />
+	</p>
+	<h3>
+	</h3>
+<span style="font-size:14px;font-family:'Microsoft YaHei';"></span><span style="font-size:14px;font-family:'Microsoft YaHei';">“CSS样式分离之再分离”表型上的两个特点为“分离”和“命名”，掌握与理解其深层次思想的关键是思维方式的转变，这包括“CSS库概念”意识。举个例子吧，依照现在主流的写法，下截图所示的灰色背景的框框命名与样式可能如下：</span><span style="font-size:14px;font-family:'Microsoft YaHei';"></span>
+</p>
+<p>
+	<span style="font-size:14px;font-family:'Microsoft YaHei';">
+<pre class="prettyprint lang-js">.topic_edit_box{display:inline-block; border:1px solid #ddd; background:#f7f7f7; padding:20px 40px;}</pre>
+</span>
+<pre class="prettyprint lang-js"></pre>
+<span style="font-size:14px;font-family:'Microsoft YaHei';">如果您有强烈的分离意识，尤其在大型的项目中，这段样式可能会是这个样子（注意命名）：</span><span style="font-size:14px;font-family:'Microsoft YaHei';"></span>
+</p>
+<p>
+	<span style="font-size:14px;font-family:'Microsoft YaHei';">
+<pre class="prettyprint lang-js">.dib{display:inline-block;}
+.bdd border:1px solid #ddd;}
+.bgf7{background:#f7f7f7;}
+.p20_40{padding:20px 40px;}</pre>
+</span>
+<pre class="prettyprint lang-js"></pre>
+<span style="font-size:14px;font-family:'Microsoft YaHei';">字面上很容易理解，就是把这段样式分离成一个一个单独的样式。当然，这只是表象，要想让样式再分离发挥其最大的功效，对其精髓思想有着较为深入的理解是很必须的，否则，您可能会用的很痛苦，或是滥用而产生其他一些问题。</span><span style="font-size:14px;font-family:'Microsoft YaHei';"></span>
+</p>
+<p>
+	<span style="font-size:14px;font-family:'Microsoft YaHei';">
+	<h3>
+		三、样式分离再分离精简作用的理论基础
+	</h3>
+	<p>
+		我们的页面结构与表现是由CSS+HTML构成的，想想看，在CSS2中，总共有多少个属性，是很有限的。如果我们把CSS中的每个样式独立出来，作为最最基本的构成元素，就像基因中的碱基一样，那么，我们实际上、理论上要使用的CSS代码量是非常非常之少的，不会出现开心网一样高达81K大小的样式文件了。
+	</p>
+	<p>
+		如果CSS是碱基，那么理论上CSS文件大小仅仅是5个CSS属性的大小，如下：
+	</p>
+	<div class="zxx_code" style="margin:0px;padding:0px;">
+<pre>A{a~~}
+G{g~~}
+C{c~~}
+T{t~~}
+U{u~~}
+</pre>
+	</div>
+	<p>
+		也就是说，最小的CSS文件不足50个字符大小。万物是相对，辩证的，CSS虽然理论上非常之小，但是，要实现同样的效果，HTML代码量就是非常庞大，于是可能会有类似下面的HTML代码：
+	</p>
+	<div class="zxx_code" style="margin:0px;padding:0px;">
+<pre>&lt;div&gt;&lt;span class="A"&gt;&lt;/span&gt;&lt;span class="A"&gt;&lt;/span&gt;&lt;span class="G"&gt;&lt;/span&gt;&lt;span class="A"&gt;&lt;/span&gt;&lt;span class="G"&gt;&lt;/span&gt;&lt;span class="A"&gt;&lt;/span&gt;&lt;span class="G"&gt;&lt;/span&gt;&lt;span class="C"&gt;&lt;/span&gt;&lt;span class="C"&gt;&lt;/span&gt;&lt;span class="C"&gt;&lt;/span&gt;&lt;span class="A"&gt;&lt;/span&gt;&lt;span class="T"&gt;&lt;/span&gt;&lt;span class="T"&gt;&lt;/span&gt;&lt;span class="A"&gt;&lt;/span&gt;&lt;span class="G"&gt;&lt;/span&gt;...&lt;/div&gt;
+</pre>
+	</div>
+	<p>
+		一切都是权衡。
+	</p>
+	<p>
+		实际上，CSS有几十种不同的属性，撇开一些不定参数（例如宽度，高度，颜色值）的样式，CSS的基础构成也是非常有限的，例如下面截取的的一小段CSS库样式（命名仅供参考）：
+	</p>
+<pre class="prettyprint lang-js">.l{float:left;}.r{float:right;}.cl{clear:both;}
+.tc{text-align:center;}.tr{text-align:right;}.tl{text-align:left;}
+.tdl{text-decoration:underline;}.tdn,a.tdl:hover,a.tdn:hover{text-decoration:none;}
+.b{font-weight:bold;}.n{font-weight:normal; font-style:normal;}
+.vm{vertical-align:middle;}.vtb{vertical-align:text-bottom;}.vt{vertical-align:top;}.vn{vertical-align:-2px;}
+.fa{font-family:arial;}.ft{font-family:tahoma;}.fw{font-family:"微软雅黑"}.fs{font-family:'宋体';}
+.rel{position:relative;}.abs{position:absolute;}.ovh{overflow:hidden;}
+.dn{display:none;}.db{display:block;}.dib{display:inline-block;}.di{display:inline;}
+.cur{cursor:pointer;}</pre>
+</span>
+	<h3>
+	</h3>
+	<p>
+		<br />
+	</p>
+	<p>
+		<br />
+	</p>
+	<div class="zxx_code" style="margin:0px;padding:0px;">
+<pre></pre>
+	</div>
+	<p>
+		<br />
+	</p>
+	<div class="zxx_code" style="margin:0px;padding:0px;">
+<pre></pre>
+	</div>
+	<p>
+		<br />
+	</p>
+	<p>
+		<br />
+	</p>
+<pre class="prettyprint lang-js"></pre>
+<span style="font-size:14px;font-family:'Microsoft YaHei';">所以，理论上讲，几乎一半的样式效果，只需要上面这点CSS代码就可以了，例如，我们需要设置一个字体为“微软雅黑”，粗体，inline-block水平，相对定位的样式，则代码如下：</span><span style="font-size:14px;font-family:'Microsoft YaHei';"></span>
+</p>
+<p>
+	<span style="font-size:14px;font-family:'Microsoft YaHei';">
+<pre>&lt;strong class="fw dib rel"&gt;&lt;/strong&gt;</pre>
+</span>
+<pre></pre>
+<span style="font-size:14px;font-family:'Microsoft YaHei';"></span>
+	<p>
+		<span style="font-size:14px;font-family:'Microsoft YaHei';">样式的独立拆分，使得各种效果可以自由组合，这是有别于一个class类覆盖多个CSS属性的做法的。样式的独立拆分，精简的CSS文件，每个样式的重用性可谓发挥到的最大，同时，页面的后期维护变得异常轻松，样式冲突的可能性也是非常低的。实际上的CSS独立样式库不仅仅是上面展示的，还包括常见颜色，常见margin于padding值，清除浮动属性等。</span>
+	</p>
+	<p>
+		<span style="font-size:14px;font-family:'Microsoft YaHei';">CSS样式库又分为“通用库”，和“当前项目库”，不是本节重点，不多说。</span>
+	</p>
+	<p>
+		<span style="font-size:14px;font-family:'Microsoft YaHei';">总结这一节的核心观点，其实不难理解，就是“构成的基本元素越是独立，越是最简，其组合的可能性，元素的利用率越是高！”，CSS样式越是分离，其样式的利用率和覆盖率就越高，CSS代码就越精简！</span>
+	</p>
+	<p>
+		<span style="font-size:14px;font-family:'Microsoft YaHei';">万物守恒，CSS的精简会导致部分HTML代码的开销增大。本节重点在于理论，实际情况下面再叙述。</span>
+	</p>
+<span style="font-size:14px;font-family:'Microsoft YaHei';"></span>
+</p>
+<p>
+	<span style="font-size:14px;font-family:'Microsoft YaHei';">
+	<h3>
+		<span style="font-family:Microsoft YaHei;">四、样式彻底分离的副作用</span>
+	</h3>
+	<p>
+		<span style="font-family:Microsoft YaHei;">前面提到，就理论而言，样式越是拆分的彻底，CSS代码越是精简，CSS代码的重用率以及单个页面CSS样式的覆盖率都会相当惊人。但是，物极必反，理论不能代表实践。如果我们把所有的CSS样式进行拆分。对于一些复杂的UI效果，例如圆角自适应的导航，则此处的HTML代码开销会非常之大，此时一味的样式再分离，会使得HTML代码变得很痛苦。</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;">所以，我们需要权衡，何时分离，哪些要分离？样式精简与重用仅仅是通过分离吗。</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;">上面的问题不是一句话能说清楚的，其中有点只可意会的味道，这需要经验，以及结合自己的那套CSS准则，布局思想等！</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;">但是，可以肯定的是，所有样式都要分离显然是不行的，更加可以肯定的是，目前基本上所有的网站的样式的分离都是不够的，远远不够，CSS也是需要架构的，而没有架构这一意识，分离反而会出问题。</span>
+	</p>
+	<h3>
+		<span style="font-family:Microsoft YaHei;">五、不得不提的网页设计师</span>
+	</h3>
+	<p>
+		<span style="font-family:Microsoft YaHei;">要想让样式分离发挥巨大的潜力，设计师在其中也扮演了至关重要的作用。如果遇到的是很随性的，细节要求不严的，没有固定设计准则的网页设计师，那么，抱歉，样式分离的惊人效用将大打折扣。不难理解，拿间距来说，假设一个项目60张设计页面，结果模块间间距有的10像素，有的10像素，有的则15像素；或是内边距(padding)，没有统一的边距值，那么就会比较糟糕，分离出来的独立CSS重用性就很低，不但增加了CSS文件大小，页面本身就缺少统一性；或是颜色的例子，文字颜色凭感觉来，这里#333，那里又是#454545，然后又是#484848，这显然会有问题。或是宽度大小的设置等。</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;">设计师设计要有模块化的思想，不要这里想到一个不多的设计效果，这里用一个，那里想到一个效果，就用另一个。这本身就缺少重用性，这会使得分离的效用大打折扣的。</span>
+	</p>
+	<h3>
+		<span style="font-family:Microsoft YaHei;">六、隐形的阈值</span>
+	</h3>
+	<p>
+		<span style="font-family:Microsoft YaHei;">我认为，分离的终极目的在于精简这个网站的CSS文件，将整个网站的CSS文件只精简至一个。于是这其中就存在一个阈值的问题，如果分离的功力不够，或是理解不够准确透彻，则网站的CSS文件就会大于50K，这时，可能就是又走上以前多样式文件，系列页面拆分的老路了。所以，其中就存在了一个隐形的阈值，是一个单CSS文件还是多CSS文件的阈值。</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;">实际上，我是可以保证，一个CSS文件就可以搞定整个网站项目（前提是网站的风格要统一，要是这一个页面婉约派，另外一个豪放派，那就没辙了）的。但是，不是每个人都可以实现的，这需要对CSS理解透彻，知道如何使用最简单的代码实现同样的兼容性的效果；还要知道对整站CSS进行架构，还需要知道样式要适时合并。</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;">如果您跨不了这个阈值，分离的作用仅仅是一定程度上精简的CSS，减小了一些开发维护成本而言，其更强大的精简CSS文件个数的作用就体现不出来了！</span>
+	</p>
+	<h3>
+		<span style="font-family:Microsoft YaHei;">七、重要的结语</span>
+	</h3>
+	<p>
+		<span style="font-family:Microsoft YaHei;">我从以前讲</span><a href="http://www.zhangxinxu.com/wordpress/?p=605"><span style="font-family:Microsoft YaHei;">布局思想</span></a><span style="font-family:Microsoft YaHei;">，讲</span><a href="http://www.zhangxinxu.com/wordpress/?p=758"><span style="font-family:Microsoft YaHei;">无CSS rest</span></a><span style="font-family:Microsoft YaHei;">，到现在的CSS样式分离之再分离，以及后面的CSS架构，都是一个体系里面的。我清楚的指导，这些东西，其实很多优秀的前端人员也是知道一二，或是比我理解更深刻的。但是，对于大多数同行而言，可能认为我“又在挑刺”，其实不然。</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;">我把我自己的理解讲出来，是希望让您知道，现在绝大多数的CSS写法，架构都是有很多不足的，缺少创新。我就这么跟您说吧，您所做的任何项目，其实根本只要一个CSS文件就足够，您要是真的通透了CSS的“分离”、“架构”，即使这个网站项目有100个页面（风格统一），您也可以只使用一个CSS页面，并且可以控制CSS文件（未压缩）在40K以下。</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;">我是自信可以这么实现的。我最近做的项目50多个页面，未压缩（含大量注释，竖排）的CSS文件，就30K左右，服务器端压缩后仅11K左右，同时网站整站自适应，从内容到各个按钮，导航，全部宽度自适应，兼容性良好。</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;">要想CSS足够精简高效，请使用</span><a class="a_link" href="http://www.zhangxinxu.com/wordpress/?p=605"><span style="font-family:Microsoft YaHei;">流体布局</span></a><span style="font-family:Microsoft YaHei;">，少或</span><a class="a_link" href="http://www.zhangxinxu.com/wordpress/?p=758"><span style="font-family:Microsoft YaHei;">无CSS reset</span></a><span style="font-family:Microsoft YaHei;">，样式分离，样式合并，样式架构，理解所谓的“兼容性”。</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;">这里提到的6点，前两点在前面的文章中已经简单阐释过，第三点“分离”就是本文的内容，而后面的合并，架构，以及“兼容性”将在后面按顺序阐述。</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;">最后，还想强调一下适应性的问题。这里提到的“体系”纯粹是自己思考，积累形成的，是否对其他人适用，我是很怀疑的，尤其一些自认为CSS还不错，有一套自己固有模式的同行。人总是不同的，对CSS关注的地方也有所差异，成长学习经历不同，所处的团队不同，种种因素使得这些我认为非常有用，百益无一害的方法、思想在别人看来狗屁不通，一文不值，这也是可以理解的。</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;">最后的最后，我呢，其实从业时间也短，资历还是有限的，有些想法，观点或许有不准确之处，欢迎各位同行指正。也欢迎发表您的观点，或是通过评论或是点击</span><a class="a_link" href="http://www.zhangxinxu.com/php/question.php" target="_blank"><span style="font-family:Microsoft YaHei;">这里</span></a><span style="font-family:Microsoft YaHei;">与我进行沟通交流。</span>
+	</p>
+	<p>
+		<span style="font-family:Microsoft YaHei;"><br />
+</span>
+	</p>
+<span style="font-family:Verdana, Arial, Helvetica, sans-serif;font-size:13px;line-height:19.5px;background-color:#FEFEF2;">原创文章，转载请注明来自</span><a href="http://www.zhangxinxu.com/">张鑫旭-鑫空间-鑫生活</a><span style="font-family:Verdana, Arial, Helvetica, sans-serif;font-size:13px;line-height:19.5px;background-color:#FEFEF2;">[</span><a href="http://www.zhangxinxu.com/">http://www.zhangxinxu.com</a><span style="font-family:Verdana, Arial, Helvetica, sans-serif;font-size:13px;line-height:19.5px;background-color:#FEFEF2;">]</span><br />
+<span style="font-family:Verdana, Arial, Helvetica, sans-serif;font-size:13px;line-height:19.5px;background-color:#FEFEF2;">本文地址：</span><a href="http://www.zhangxinxu.com/wordpress/?p=916">http://www.zhangxinxu.com/wordpress/?p=916</a></span>
+</p>
+<p>
+	原文链接：http://www.zhangxinxu.com/wordpress/2010/07/css%E6%A0%B7%E5%BC%8F%E5%88%86%E7%A6%BB%E4%B9%8B%E5%86%8D%E5%88%86%E7%A6%BB/
+</p>

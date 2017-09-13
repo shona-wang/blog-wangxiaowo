@@ -1,0 +1,234 @@
+body{
+	font-family: tahoma, arial,"Hiragino Sans GB", "Microsoft Yahei", '\5b8b\4f53', sans-serif;
+	margin:0;
+	padding:0;
+}
+/*字体*/
+h1{
+	font-size: 32px;
+	line-height: 48px;
+	margin:0;
+	padding:0;
+}
+h2,.text-xxlarge{
+	font-size: 22px;
+	line-height: 33px;
+	margin:0;
+	padding:0;
+}
+h3,.text-xlarge{
+	font-size: 20px;
+	line-height: 30px;
+	margin:0;
+	padding:0;
+}
+h4,.text-large{
+	font-size: 14px;
+	line-height: 21px;
+	margin:0;
+	padding:0;
+}
+h5{
+	font-size: 12px;
+	line-height: 18px;
+	margin:0;
+	padding:0;
+}
+p{
+	margin:0;
+	padding:0;
+}
+ul,li{
+	list-style: none;
+}
+/*ui主色*/
+.c_1{
+	color:#ff0000;
+}
+.mainColor{
+	background:#ff0000;
+}
+.mixB4{
+	background:#990000;
+}
+.mixB2{
+	background:#cc0000;
+}
+.mixW8{
+	background:#ffcccc;
+}
+.mixW2{
+	background:#ff3333;
+}
+.mixW{
+	background:#ff1414;
+}
+
+.bw3{
+	background:#333333;
+}
+.bw6{
+	background:#626262;
+}
+.bw9{
+	background:#999999;
+}
+.bwd{
+	background:#dcdcdc;
+	color:#333;
+}
+.bwe{
+	background:#eeeeee;
+	color:#333;
+}
+.sComplate{
+	background:#28b5f5;
+}
+.sCancle{
+	background:#dddddd;
+	color:#333;
+}
+.sMsg{
+	background:#59bedc;
+}
+.sSuccess{
+	background:#0fc4b1;
+}
+.sWarning{
+	background:#ffaa00;
+}
+.sDanger{
+	background:#ff5151;
+}
+.lineD{
+	background:#dcdcdc;
+}
+.lineE{
+	background:#eeeeee;
+}
+.lineF5{
+	background:#f5f5f5;
+}
+.lineF{
+	background:#f89545;
+}
+.lineS{
+	background:#FDE4D1;
+}
+.lineT{
+	background:#FEF5ED;
+}
+.font3{
+	background:#333333;
+}
+.font6{
+	background:#666666;
+}
+.font9{
+	background:#999999;
+}
+
+/*颜色*/
+.gray-bg{
+	background: #f3f3f4;
+}
+
+/*wbox*/
+.wbox{
+	margin-bottom: 25px;
+	margin-top:0;
+	padding:0;
+}
+.wbox-title{
+	background-color: #fff;
+	border-top:4px solid #e7eaec;
+	padding:14px 15px 7px;
+	min-height:30px;
+}
+.wbox-content{
+	background-color: #fff;
+	padding: 15px 20px 20px;
+	border-top:1px solid #e7eaec;
+}
+.uiTitle{
+	display: inline-block;
+	background: rgba(246,122,23,1);
+	height:40px;
+	line-height: 40px;
+	padding:0 20px;
+	margin-bottom: 20px;
+	color: #fff;
+	position: relative;
+	margin-left:30px;
+}
+.uiTitle:before{
+	content: "";
+	position: absolute;
+	top:0;
+	left:-40px;
+	height:0;
+	width:0;
+	border-width: 20px 20px 20px 20px;
+	border-color: transparent #f67a17 transparent transparent;
+	border-style: solid;
+}
+.uiTitle:after{
+	content:"";
+	position:absolute;
+	width:10px;
+	height:10px;
+	background:#f3f3f4;
+	border-radius:5px;
+	top:15px;
+	left:-10px;
+}
+.clBlock{
+	display:inline-block;
+	margin-right:0.5rem;
+	width:4rem;
+	height:2.5rem;
+	border-radius:0.4rem;
+	line-height:2.5rem;
+	color:#fff;
+	text-align:center;
+}
+.example .demo,.example .code{
+	display: inline-block;
+	position: relative;
+	padding-top: 30px;
+	padding-bottom:5px;
+}
+.example .demo:after,.example .code:after{
+	content:"示例";
+	position: absolute;
+	top:-1px;
+	left:-1px;
+	padding:3px 7px;
+	font-size: 12px;
+	font-weight: bold;
+	background:#f5f5f5;
+	border:rgb(221,221,221) solid 1px;
+	color:#999;
+	border-radius: 4px 0;
+}
+.example .code:after{
+	content: "代码";
+}
+.example .code{
+	border-left:1px solid #ddd;
+	background: #f5f5f5;
+}
+.example .code pre{
+	border:none;
+}
+.wbox-content .example .row{
+	width:100%;
+	border:1px solid #ddd;
+	background: #fff;
+}
+.example .doc{
+	font-size: 16px;
+}
+.uiBlock{
+	padding-top: 10px;
+}

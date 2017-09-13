@@ -1,0 +1,203 @@
+﻿/*此执行文本需要按顺序单步执行,执行工具PL/SQL*/
+/*按钮表建立*/
+declare tableExistedCount number;   --声明变量存储要查询的表是否存在
+begin
+         select count(1) into tableExistedCount  from user_tables t where t.table_name = upper('sysButtonCtion'); --从系统表中查询当表是否存在
+         if tableExistedCount  = 0 then --如果不存在，使用快速执行语句创建新表
+         execute immediate
+         '
+  CREATE TABLE sysButtonCtion(
+  Guid VARCHAR2(50) primary key,
+  ButtonName VARCHAR2(50) NULL,
+  ButtonTiele VARCHAR2(50) NULL,
+  ButtonMin VARCHAR2(50) NULL,
+  Buttonicon VARCHAR2(50) NULL,
+  ButtonRemak VARCHAR2(50) NULL,
+  AccountNum VARCHAR2(50) NULL,
+  CJSJ date NULL,
+  CJZH VARCHAR2(50) NULL,
+  ButtoniconName VARCHAR2(50) NULL
+)'   
+ ;
+ end if;
+end;
+
+/*组织机构权限表建立*/
+declare tableExistedCount number;   --声明变量存储要查询的表是否存在
+begin
+         select count(1) into tableExistedCount  from user_tables t where t.table_name = upper('SysGroupPowerOrganization'); --从系统表中查询当表是否存在
+         if tableExistedCount  = 0 then --如果不存在，使用快速执行语句创建新表
+         execute immediate
+         '
+  CREATE TABLE SysGroupPowerOrganization(
+  FuncID VARCHAR2(50) NOT NULL,
+  parentid VARCHAR2(50) NULL,
+  Target VARCHAR2(50) NULL,
+  DWID VARCHAR2(50) NOT NULL,
+  AccountNum VARCHAR2(50) NULL,
+  KFDM VARCHAR2(50) NULL,
+  LRXGRY VARCHAR2(50) NULL,
+  LRXGSJ date NULL
+  )'   
+ ;
+ end if;
+end;
+
+
+
+
+--**职位权限表建立*/
+
+declare tableExistedCount number;   --声明变量存储要查询的表是否存在
+begin
+         select count(1) into tableExistedCount  from user_tables t where t.table_name = upper('SysGroupPowerPositiion'); --从系统表中查询当表是否存在
+         if tableExistedCount  = 0 then --如果不存在，使用快速执行语句创建新表
+         execute immediate
+         '
+ CREATE TABLE SysGroupPowerPositiion(
+  FuncID VARCHAR2(50) NOT NULL,
+  parentid VARCHAR2(50) NULL,
+  Target VARCHAR2(50) NULL,
+  ZWID VARCHAR2(50) NOT NULL,
+  AccountNum VARCHAR2(50) NULL,
+  KFDM VARCHAR2(50) NULL,
+  LRXGRY VARCHAR2(50) NULL,
+  LRXGSJ date NULL
+  )'
+ ;
+ end if;
+end;
+
+
+
+/*用户权限表建立*/
+
+declare tableExistedCount number;   --声明变量存储要查询的表是否存在
+begin
+         select count(1) into tableExistedCount  from user_tables t where t.table_name = upper('SysGroupPowerUser'); --从系统表中查询当表是否存在
+         if tableExistedCount  = 0 then --如果不存在，使用快速执行语句创建新表
+         execute immediate
+         '
+CREATE TABLE SysGroupPowerUser(
+  FuncID VARCHAR2(50) NOT NULL,
+  parentid VARCHAR2(50) NULL,
+  Target VARCHAR2(50) NULL,
+  Userid VARCHAR2(50) NOT NULL,
+  AccountNum VARCHAR2(50) NULL,
+  KFDM VARCHAR2(50) NULL,
+  LRXGRY VARCHAR2(50) NULL,
+  LRXGSJ date NULL
+  )'
+ ;
+ end if;
+end;
+
+
+
+/*字典表建立*/
+
+declare tableExistedCount number;   --声明变量存储要查询的表是否存在
+begin
+         select count(1) into tableExistedCount  from user_tables t where t.table_name = upper('KY_ZD'); --从系统表中查询当表是否存在
+         if tableExistedCount  = 0 then --如果不存在，使用快速执行语句创建新表
+         execute immediate
+         '
+CREATE TABLE KY_ZD(
+  DJBH VARCHAR2(50) primary key,
+  MC VARCHAR2(100) NULL,
+  YWLX VARCHAR2(50) NULL,
+  YWLXMC VARCHAR2(100) NULL,
+  LRRY VARCHAR2(50) NULL,
+  LRSJ date NULL,
+  XH int NULL,
+  BZ VARCHAR2(100) NULL,
+  AccountNum VARCHAR2(50) NULL
+  )
+'
+ ;
+ end if;
+end;
+
+/*附件表建立*/
+
+declare tableExistedCount number;   --声明变量存储要查询的表是否存在
+begin
+         select count(1) into tableExistedCount  from user_tables t where t.table_name = upper('KY_ZD'); --从系统表中查询当表是否存在
+         if tableExistedCount  = 0 then --如果不存在，使用快速执行语句创建新表
+         execute immediate
+         '
+CREATE TABLE KY_FJ(
+  DocId VARCHAR2(50) primary key,
+  DocBh VARCHAR2(50) NOT NULL,
+  Docname VARCHAR2(50) NULL,
+  DocSIZE NUMBER NULL,
+  FType VARCHAR2(50) NULL,
+  FPath VARCHAR2(250) NULL,
+  SFML VARCHAR2(50) NULL,
+  LRRY VARCHAR2(50) NULL,
+  LRSJ date NULL,
+  AccountNum VARCHAR2(50) NULL
+  )
+'
+ ;
+ end if;
+end;
+
+
+
+/*消息表建立*/
+
+declare tableExistedCount number;   --声明变量存储要查询的表是否存在
+begin
+         select count(1) into tableExistedCount  from user_tables t where t.table_name = upper('BaseMessage'); --从系统表中查询当表是否存在
+         if tableExistedCount  = 0 then --如果不存在，使用快速执行语句创建新表
+         execute immediate
+         '
+CREATE TABLE BaseMessage(
+  XXLX VARCHAR2(50) NULL,
+  XXLXMC VARCHAR2(50) NULL,
+  LTXXZT VARCHAR2(50) NULL,
+  XXNR VARCHAR2(50) NULL,
+  URL VARCHAR2(100) NULL,
+  JSUserid VARCHAR2(50) NULL,
+  JSName VARCHAR2(50) NULL,
+  XXZT char(1) NULL,
+  LLRYDWID VARCHAR2(50) NULL,
+  LLRYDWMC VARCHAR2(50) NULL,
+  LRRYZH VARCHAR2(50) NULL,
+  LRRYXM VARCHAR2(50) NULL,
+  LRSJ date NULL,
+  AccountNum VARCHAR2(50) NULL
+)
+'
+ ;
+ end if;
+end;
+
+
+
+
+/*Tree字典表建立*/
+
+declare tableExistedCount number;   --声明变量存储要查询的表是否存在
+begin
+         select count(1) into tableExistedCount  from user_tables t where t.table_name = upper('KY_ZD_Tree'); --从系统表中查询当表是否存在
+         if tableExistedCount  = 0 then --如果不存在，使用快速执行语句创建新表
+         execute immediate
+         '
+CREATE TABLE KY_ZD_Tree(
+    [JDDM] VARCHAR2(50) primary key,
+	[JDMC] VARCHAR2(50) NULL,
+	[FJDDM] VARCHAR2(50) NULL,
+	[DM] VARCHAR2(50) NULL,
+	[XH] VARCHAR2(50) NULL,
+	[YWLX] VARCHAR2(50) NULL,
+	[YWLXMC] VARCHAR2(50) NULL,
+	[LRRY] VARCHAR2(50) NULL,
+	[LRSJ] date NULL,
+	[ACCOUNTNUM] VARCHAR2(50) NULL
+)
+'
+ ;
+ end if;
+end;

@@ -1,0 +1,78 @@
+2015-01-26 10:47:47,883 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 对象名 'KY_ParameterSetting' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 KY.DataHelper.DataHelper.SqlGetDataTable(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 242
+2015-01-26 10:47:47,914 [DEBUG] 
+ -- 错误信息
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 KY.ERPOffice.DAL.Rydj_DAL.UserLogin(String data) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\Rydj_DAL.cs:行号 222
+2015-01-26 10:47:47,914 [DEBUG] 
+ -- 错误信息
+System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 KY.ERPOffice.DAL.Rydj_DAL.UserLogin(String data) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\Rydj_DAL.cs:行号 253
+   在 KY.ERPOffice.BLL.Rydj_BLL.UserLogin(String data) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\BLL\Rydj_BLL.cs:行号 33
+   在 WindowsAspx_Login_Data.RepeatLogin() 位置 e:\51程序\MIniUI资料\MiKYKJ_Web\web\WindowsAspx\Login_Data.aspx.cs:行号 64
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct& sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 WindowsAspx_Login_Data.Page_Load(Object sender, EventArgs e) 位置 e:\51程序\MIniUI资料\MiKYKJ_Web\web\WindowsAspx\Login_Data.aspx.cs:行号 24
+2015-01-26 10:56:02,491 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 对象名 'KY_ParameterSetting' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 KY.DataHelper.DataHelper.SqlGetDataTable(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 242
+2015-01-26 10:59:24,870 [DEBUG] 
+ -- 错误信息
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 KY.ERPOffice.DAL.Rydj_DAL.UserLogin(String data) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\Rydj_DAL.cs:行号 222
+2015-01-26 10:59:24,870 [DEBUG] 
+ -- 错误信息
+System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 KY.ERPOffice.DAL.Rydj_DAL.UserLogin(String data) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\Rydj_DAL.cs:行号 253
+   在 KY.ERPOffice.BLL.Rydj_BLL.UserLogin(String data) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\BLL\Rydj_BLL.cs:行号 33
+   在 WindowsAspx_Login_Data.RepeatLogin() 位置 e:\51程序\MIniUI资料\MiKYKJ_Web\web\WindowsAspx\Login_Data.aspx.cs:行号 64
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct& sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 WindowsAspx_Login_Data.Page_Load(Object sender, EventArgs e) 位置 e:\51程序\MIniUI资料\MiKYKJ_Web\web\WindowsAspx\Login_Data.aspx.cs:行号 24
+2015-01-26 14:11:15,256 [DEBUG] 
+ -- 错误信息
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.End()
+   在 System.Web.HttpResponse.Redirect(String url, Boolean endResponse)
+   在 System.Web.HttpResponse.Redirect(String url)
+   在 KY.ERPOffice.Common.MyPublicMin.Redirect() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\MyPublicMin.cs:行号 656
+   在 Flows_Flows_Data.Page_Load(Object sender, EventArgs e) 位置 e:\51程序\MIniUI资料\MiKYKJ_Web\web\Flows\Flows_Data.aspx.cs:行号 30

@@ -1,0 +1,328 @@
+/*css reset*/
+ul,li{
+	list-style: none;
+	margin: 0;
+	padding:0;
+}
+p,textarea{
+	margin:0;
+	padding:0;
+}
+/*通用 布局*/
+.curP{
+	cursor: pointer;
+}
+.marAuto{
+	margin-left: auto;
+	margin-right: auto;
+}
+.disB{
+	display: block;
+}
+.disIB{
+	display: inline-block;
+}
+.disI{
+	display: inline;
+}
+.disF{
+	display: flex;
+}
+.disIF{
+	display: inline-flex;
+}
+.disN{
+	display: none;
+}
+.fle1{
+	flex: 1;
+}
+.posR{
+	position: relative;
+}
+.posA{
+	position: absolute;
+}
+.oveH{
+	overflow: hidden;
+}
+.verM{
+	vertical-align: middle;
+}
+.marT50{
+	margin-top:50px;
+}
+.marT20{
+	margin-top:20px;
+}
+.marT10{
+	margin-top: 10px !important;
+}
+.marR10{
+	margin-right:10px;
+}
+.marL10{
+	margin-left: 10px;
+}
+.marB10{
+	margin-bottom: 10px !important;
+}
+.marB20{
+	margin-bottom: 20px;
+}
+.marL5{
+	margin-left: 5%;
+}
+.pad0{
+	padding:0 !important;
+}
+.padLR0{
+	padding-left:0 ;
+	padding-right: 0;
+}
+.padT3{
+	padding-top: 3px !important;
+}
+.padB3{
+	padding-bottom: 3px !important;
+}
+.padT10{
+	padding-top: 10px;
+}
+.padB10{
+	padding-bottom: 10px;
+}
+.padL10{
+	padding-left: 10px !important;
+}
+.padR10{
+	padding-right: 10px;
+}
+.padT20{
+	padding-top: 20px !important;
+}
+.padB20{
+	padding-bottom: 20px !important;
+}
+.padL20{
+	padding-left: 20px !important;
+}
+.padR20{
+	padding-right: 20px !important;
+}
+.wid90{
+	width:90%;
+}
+.wid100{
+	width: 100%;
+}
+.wid-60{
+	width:60px;
+}
+.hei-60{
+	height: 60px;
+}
+
+/*通用 字体*/
+.textL{
+	text-align: left;
+}
+.textC{
+	text-align: center;
+}
+.textR{
+	text-align: right;
+}
+.fontB{
+	font-weight: bold;
+}
+.f14{
+	font-size: 14px !important;
+}
+.f12{
+	font-size: 12px;
+}
+.f16{
+	font-size: 16px;
+}
+.f18{
+	font-size: 18px;
+}
+.f20{
+	font-size: 20px;
+}
+.f24{
+	font-size: 24px;
+}
+.f40{
+	font-size: 40px;
+}
+
+/*通用 颜色*/
+.cff{
+	color: #FFFFFF !important;
+}
+.c33{
+	color: #333333;
+}
+.c66{
+	color: #666666;
+}
+.c99{
+	color: #999999;
+}
+.cca{
+	color: #cacaca;
+}
+.cMain{
+	color:#007AFF ;
+}
+.bg00{
+	background: #007AFF;
+}
+.bg4c{
+	background: #4cd964 !important;
+}
+.bgf5{
+	background: #f5f5f5;
+}
+.baff{
+	background: #FFFFFF;
+}
+.borB03{
+	border-bottom: #036ada solid 1px;
+}
+.borA4c{
+	border: #4CD964 solid 1px;
+}
+.borRcc{
+	border-right:#ccc solid 1px;
+}
+.borR00{
+	border-right:#007AFF solid 1px;
+}
+.bor0{
+	border:0 !important;
+}
+
+
+/*页面*/
+.content{
+	padding-top: 44px;
+}
+.loginPage .mui-input-row label,.registerPage .mui-input-row label{
+	width:22%;
+}
+.loginPage .mui-input-row label~input,
+.loginPage .mui-input-row label~select,
+.loginPage .mui-input-row label~textarea,
+.registerPage .mui-input-row label~input,
+.registerPage .mui-input-row label~select,
+.registerPage .mui-input-row label~textarea{
+	width:78%;
+}
+.shopLogo{
+	height:200px;
+	background: url(../img/shopLogo.jpg) no-repeat;
+}
+.shopLogo .logo{
+	width:100px;
+	margin:0 auto;
+	display: block;
+	padding-top: 40px;
+}
+.shopList{
+	margin-top:-45px;
+}
+.shopList li a{
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	padding:15px 0;
+	text-align: center;
+}
+.createNewShop{
+	width: 80%;
+	margin:0 auto;
+	padding: 15px 0;
+	border-radius: 0;
+	display: block;
+}
+.shopPic{
+	width: 100%;
+	height:120px;
+	background: url(../img/shopLogo.jpg) no-repeat;
+	position: relative;
+}
+.shopPic .shopWorker{
+	position: absolute;
+	bottom: 0;
+	right:100px;
+	font-size: 24px;;
+}
+.shopPic .headPic{
+	width:80px;
+	height:80px;
+	position: absolute;
+	bottom: -40px;
+	right:10px;
+}
+.workerList{
+	margin-top:60px;
+}
+.workerList .date{
+	width:90px;
+}
+.cameraIcon{
+	width:60px;
+	height: 60px;
+	background: #e4e4e4;
+	position: relative;
+}
+.cameraIcon span{
+	position:absolute;
+	top:10px;
+	left:10px;
+}
+.workerDetail img{
+	width:60px;
+	height: 60px;
+}
+.workerDetail .time{
+	position: absolute;
+	right:10px;
+	top:0;
+}
+.goodsPics{
+	display: inline-block;
+	position: relative;
+}
+.goodsPics span{
+	position: absolute;
+	top:0;
+	right:0;
+	color: #FF0000;
+	font-weight: bold;
+}
+.workerDetailUl{
+	width:90%;
+	margin:0 auto;
+	padding-top:10px ;
+	padding-bottom: 10px;
+	overflow: hidden;
+}
+table td,table th{
+	padding:10px 0;
+	text-align: center;
+}
+.shopWorkerLogo img{
+	width:80px;
+	height:80px;
+	border-radius: 40px;
+	display: block;
+	margin:20px auto 10px;
+	/*margin:0 auto;*/
+}
+
+
+

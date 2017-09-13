@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KY.DataHelper</name>
+    </assembly>
+    <members>
+        <member name="P:KY.DataHelper.Str_ConnString.ConStr">
+            <summary>
+            获取连接字符串
+            </summary>
+        </member>
+        <member name="P:KY.DataHelper.Str_ConnString.KJMS">
+            <summary>
+            获取框架模式
+            </summary>
+        </member>
+        <member name="P:KY.DataHelper.Str_ConnString.MyDateType">
+            <summary>
+            获取数据库类型
+            </summary>
+        </member>
+        <member name="M:KY.DataHelper.KY_Exception.in_ex(System.Exception)">
+            <summary>
+            底层数据异常录入
+            </summary>
+            <param name="excontent"></param>
+        </member>
+        <member name="M:KY.DataHelper.KY_Exception.Redirect">
+            <summary>
+            底层自定义错误页面
+            </summary>
+        </member>
+        <member name="T:KY.DataHelper.SqlDataHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.GetNonceTransaction">
+            <summary>
+            获得当前事务
+            </summary>
+            <returns>当前事务</returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.Open">
+            <summary>
+            开启数据库连接
+            </summary>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.SqlExecute(System.String)">
+            <summary>
+            执行 SQL 语句并返回受影响的行数。
+            </summary>
+            <param name="sqlStr">Sql语句</param>
+            <returns>受影响的行数</returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.SqlScalar(System.String)">
+            <summary>
+            执行 SQL 语句，并返回查询所返回的结果集中第一行的第一列。忽略其他列或行。
+            </summary>
+            <param name="sqlStr">SQL 语句</param>
+            <returns>结果集中第一行的第一列</returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.SqlGetDataTable(System.String)">
+            <summary>
+            执行SQL语句，获得数据表
+            </summary>
+            <param name="sqlStr">SQL语句</param>
+            <returns>数据表</returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.SqlGetDataReader(System.String)">
+            <summary>
+            执行SQL语句，返回只进结果集流的读取方法
+            </summary>
+            <param name="sqlStr">SQL语句</param>
+            <returns>结果集流</returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.ExecuTeansaction(System.String[])">
+            <summary>
+            事物执行数组sql
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.ListExecuTeansaction(System.Collections.ArrayList)">
+            <summary>
+            事物执行动态数组List
+            </summary>
+            <param name="List"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.SpExecute(System.String)">
+            <summary>
+            执行存储过程，返回受影响的行数。
+            </summary>
+            <param name="spName"></param>
+            <returns>所影响的行数</returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.SpScalar(System.String)">
+            <summary>
+            执行存储过程，并返回查询所返回的结果集中第一行的第一列。忽略其他列或行。
+            </summary>
+            <param name="spName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.SpGetDataTable(System.String)">
+            <summary>
+            执行存储过程，获得数据表
+            </summary>
+            <param name="spName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.SpGetDataReader(System.String)">
+            <summary>
+            执行存储过程，返回只进结果集流的读取方法。
+            </summary>
+            <param name="spName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.SpGetReturnValue(System.String)">
+            <summary>
+            执行存储过程，获得返回值
+            </summary>
+            <param name="spName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.SpGetReturnValue(System.String,System.String[],System.Collections.Hashtable@)">
+            <summary>
+            执行存储过程，获得返回值
+            </summary>
+            <param name="spName">存储过程名称</param>
+            <param name="returnKey">返回值的键名</param>
+            <param name="returnValue">返回值的键值表</param>
+            <returns></returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.SpGetReturnValue(System.String,System.String[],System.Collections.Hashtable@,System.Data.DataTable@)">
+            <summary>
+             执行存储过程，获得返回值
+            </summary>
+            <param name="spName">存储过程名称</param>
+            <param name="returnValue">返回值的键名</param>
+            <param name="returnValue">返回值的键值表</param>
+            <param name="returnTable">返回的数据表</param>
+            <returns></returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.Sp_ExGetReturnValueCount(System.String,System.Collections.Hashtable)">
+            <summary>
+            执行存储过程返回受影响行数(增加、更新、删除 用)
+            </summary>
+            <param name="spName">存储过程名称</param>
+            <param name="HashreturnValue">参数集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:KY.DataHelper.DataHelper.Sp_ExGetReturnValueTable(System.String,System.Collections.Hashtable,System.Data.DataTable@)">
+            <summary>
+            执行存储过程查询数据表
+            </summary>
+            <param name="spName">存储过程名称</param>
+            <param name="HashreturnValueref">参数名称</param>
+            <param name="returnTable">接受数据的数据表</param>
+            <returns>成功0  反之-1</returns>
+        </member>
+        <member name="P:KY.DataHelper.DataHelper.IfUseTransaction">
+             <summary>
+            是否使用事务
+             </summary>
+        </member>
+        <member name="P:KY.DataHelper.DataHelper.ConnString">
+            <summary>
+            设置数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:KY.DataHelper.DataHelper.DataConnection">
+            <summary>
+            获得数据库连接对象
+            </summary>
+        </member>
+        <member name="P:KY.DataHelper.DataHelper.DataCommand">
+            <summary>
+            获得数据库操作对象
+            </summary>
+        </member>
+        <member name="P:KY.DataHelper.DataHelper.SpFileValue">
+            <summary>
+            获取或设置存储过程需要使用的参数值
+            </summary>
+        </member>
+        <member name="M:KY.DataHelper.SqlDataHelper.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:KY.DataHelper.SqlDataHelper.#ctor(System.Boolean)">
+            <summary>
+            构造函数 
+            </summary>
+            <param name="ifUseTransaction">是否启用事物</param>
+        </member>
+        <member name="M:KY.DataHelper.SqlDataHelper.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="connStr">数据库链接</param>
+        </member>
+        <member name="M:KY.DataHelper.SqlDataHelper.GetDataObjectParameter(System.String)">
+            <summary>
+            从数据库中获得对象包含的参数名称(数据表、视图的数据列名称、存储过程参数)
+            </summary>
+            <param name="objectName">对象名称</param>     
+        </member>
+        <member name="M:KY.DataHelper.SqlDataHelper.ExecuTeansaction(System.String[])">
+            <summary>
+            事物执行sql语句
+            </summary>
+            <param name="sql">sql[]数组</param>
+            <returns>执行结果 成功"1" 失败"-1"</returns>
+        </member>
+        <member name="M:KY.DataHelper.SqlDataHelper.ListExecuTeansaction(System.Collections.ArrayList)">
+            <summary>
+            事物执行sql语句
+            </summary>
+            <param name="List">ArrayList 数组</param>
+            <returns>执行结果 成功"1" 失败"-1"</returns>
+        </member>
+        <member name="M:KY.DataHelper.SqlDataHelper.SpExecute(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="spName">存储过程名称</param>
+            <returns>受影响行数</returns>
+        </member>
+        <member name="M:KY.DataHelper.SqlDataHelper.SpScalar(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="spName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KY.DataHelper.SqlDataHelper.Sp_ExGetReturnValueTable(System.String,System.Collections.Hashtable,System.Data.DataTable@)">
+            <summary>
+            执行存储过程查询数据表
+            </summary>
+            <param name="spName">存储过程名称</param>
+            <param name="HashreturnValueref">参数名称</param>
+            <param name="returnTable">接受数据的数据表</param>
+            <returns>成功0  反之-1</returns>
+        </member>
+        <member name="M:KY.DataHelper.OracleDataHelper.GetDataObjectParameter(System.String)">
+            <summary>
+            从数据库中获得对象包含的参数名称(数据表、视图的数据列名称、存储过程参数)
+            </summary>
+            <param name="objectName">对象名称</param>     
+        </member>
+        <member name="M:KY.DataHelper.OracleDataHelper.ExecuTeansaction(System.String[])">
+            <summary>
+            事物执行SQL
+            </summary>
+            <param name="sql">SQL数组</param>
+            <returns>标志</returns>
+        </member>
+        <member name="M:KY.DataHelper.OracleDataHelper.ListExecuTeansaction(System.Collections.ArrayList)">
+            <summary>
+            事物执行SQL
+            </summary>
+            <param name="List">SQLList</param>
+            <returns>标志</returns>
+        </member>
+        <member name="M:KY.DataHelper.OracleDataHelper.SpExecute(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="spName">存储过程名称</param>
+            <returns>标志</returns>
+        </member>
+        <member name="M:KY.DataHelper.OracleDataHelper.SpScalar(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="spName">存储过程名称</param>
+            <returns>结果</returns>
+        </member>
+        <member name="M:KY.DataHelper.OracleDataHelper.Sp_ExGetReturnValueCount(System.String,System.Collections.Hashtable)">
+            <summary>
+            
+            </summary>
+            <param name="spName"></param>
+            <param name="HashreturnValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KY.DataHelper.OracleDataHelper.Sp_ExGetReturnValueTable(System.String,System.Collections.Hashtable,System.Data.DataTable@)">
+            <summary>
+            
+            </summary>
+            <param name="spName"></param>
+            <param name="HashreturnValue"></param>
+            <param name="returnTable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KY.DataHelper.OracleDataHelper.EX_SpGetReturnValue(System.String,System.String[],System.Collections.Hashtable@,System.Data.DataTable@,System.Collections.Hashtable)">
+            <summary>
+            
+            </summary>
+            <param name="spName"></param>
+            <param name="returnKey"></param>
+            <param name="returnValue"></param>
+            <param name="returnTable"></param>
+            <param name="HashreturnValue"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="column.aspx.cs" Inherits="cms_service_column" %>

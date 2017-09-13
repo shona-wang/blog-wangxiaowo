@@ -1,0 +1,42 @@
+<div class="blog" id="blogList">
+	<div class="header">
+		<div class="photo"></div>
+		<h2>不忘初心，方能始终</h2>
+		<div class="tag">
+			<div class="list" id="list"></div>
+		</div>
+	</div>
+	<div class="content" >
+		<div class="contentList" id="blogContent">
+		</div>
+		<div class="tips"><span>已经到底了。。。</span></div>
+	</div>
+<script id="targetList" type="text/html">
+	{{each list as value i}}
+		<a href="javascript:void(0)" targetId="{{value.id}}">{{value.name}}</a>
+	{{/each}}
+</script>
+<script id="blogData" type="text/html">
+	{{each data as value i}}
+		 <div class="articleItem">
+		 	<a href="javascript:void(0)" title="{{value.title}}" class="link" url="wrap/{{value.url}}/1">
+		 		<div class="pic">
+		 			<img src="src/img/default.jpg" data-img="{{value.img}}" alt="{{value.title}}">
+		 		</div>
+		 		<div class="title">{{value.title}}</div>
+		 		<div class="info">
+		 			<p>{{value.description}}</p>
+		 		</div>
+		 	</a>
+		 	<div class="footer">
+		 		<div class="tags">
+		 			<strong>tags:</strong>
+		 			{{each value.tagsName as v k}}
+		 			<a href="javascript:void(0)" tagId="{{v.id}}">{{v.name}}</a>
+		 			{{/each}}
+		 		</div>
+		 		<div class="time">{{value.ctime | dateFormat: 'yyyy-MM-dd'}}</div>
+		 	</div>
+		 </div>
+	{{/each}}
+</script>

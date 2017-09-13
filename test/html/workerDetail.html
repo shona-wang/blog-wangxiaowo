@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<meta charset="UTF-8">
+		<title>详细记录</title>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">详细记录</h1>
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+				<span class="mui-icon mui-icon-left-nav"></span>返回
+			</button>
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left padL10">
+				关闭
+			</button>
+			<a class="mui-icon mui-icon-more mui-pull-right"></a>
+		</header>
+		<section class="mui-content">
+			<div class="title marT20 marL10 padB10 c66">
+				基本信息
+			</div>
+			<ul class="mui-table-view">
+				
+				<li class="mui-table-view-cell padT3 padB3 padLR0">
+					<div class="mui-input-row">
+						<label for="">添加姓名</label>
+							<input type="text" class="mui-input" placeholder="请输入账号" />
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="workerDetail-chooseSex.html">
+						选择性别
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="workerDetail-addPhone.html">
+						添加手机号
+					</a>
+				</li>
+			</ul>
+			<div class="title marT20 marL10 padB10 c66">
+				验光记录
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="workerDetail-addFarRecord.html">
+						添加"远用"验光记录
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="workerDetail-addNearRecord.html">
+						添加"近用"验光记录
+					</a>
+				</li>
+			</ul>
+			<div class="title marT20 marL10 padB10 c66">
+				商品记录
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="cameraIcon disIB">
+						<span class="mui-icon mui-icon-camera f40 cca fontB"></span>
+					</div>
+					<div class="goodsPics">
+						<img src="../img/1.jpg" class="wid-60 hei-60" data-preview-src="" data-preview-group="1" />
+						<span class="mui-icon mui-icon-close"></span>
+					</div>
+					<div class="goodsPics">
+						<img src="../img/2.jpg" class="wid-60 hei-60" data-preview-src="" data-preview-group="1" />
+						<span class="mui-icon mui-icon-close"></span>
+					</div>
+					<div class="goodsPics">
+						<img src="../img/3.jpg" class="wid-60 hei-60" data-preview-src="" data-preview-group="1" />
+						<span class="mui-icon mui-icon-close"></span>
+					</div>
+					<div class="goodsPics">
+						<img src="../img/1.jpg" class="wid-60 hei-60" data-preview-src="" data-preview-group="1" />
+						<span class="mui-icon mui-icon-close"></span>
+					</div>
+					<div class="goodsPics">
+						<img src="../img/2.jpg" class="wid-60 hei-60" data-preview-src="" data-preview-group="1" />
+						<span class="mui-icon mui-icon-close"></span>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-input-row">
+						<label for="" style="width:55%;">销售价格(单位：元)</label>
+							<input type="text" class="mui-input" style="width:45%;" placeholder="请输入销售价格" />
+					</div>
+				</li>
+			</ul>
+			<div class="title marT20 marL10 padB10 c66">
+				描述
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell pad0">
+					<div class="mui-input-row">
+						<textarea id="" rows="3" class="bor0 padT10 padL10" placeholder="添加更多备注信息"></textarea>
+					</div>
+				</li>
+			</ul>
+			<div class="mui-button-row marT20 padB20">
+				<button class="mui-btn padL20 padR20 marR10">返回</button>
+				<button class="mui-btn mui-btn-blue padL20 padR20 marL10" onclick="location.href='shopWork.html'">保存</button>
+			</div>
+			
+		</section>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.zoom.js"></script>
+		<script src="../js/mui.previewimage.js"></script>
+	</body>
+</html>

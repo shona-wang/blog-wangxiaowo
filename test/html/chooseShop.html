@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+		
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<meta charset="UTF-8">
+		<title>选择门店</title>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">选择门店</h1>
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+				<span class="mui-icon mui-icon-left-nav"></span>返回
+			</button>
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left padL10">
+				关闭
+			</button>
+			<a class="mui-icon mui-icon-more mui-pull-right"></a>
+		</header>
+		<section class="mui-content">
+			<div class="shopLogo">
+				<img class="logo" src="../img/logo.jpg" alt="logo" />
+			</div>
+			<ul class="shopList">
+				<li><a class="bg00 cff borB03" href="javascript:void(0);" onclick="location.href='shopWork.html'">亨氏眼睛</a></li>
+				<li><a class="bg00 cff borB03" href="javascript:void(0);" onclick="location.href='shopWork.html'">康城眼睛店</a></li>
+			</ul>
+			<button class="mui-btn mui-btn-primary createNewShop bg4c borA4c" onclick="location.href='createNewShop.html'">
+				<span class="mui-icon mui-icon-plusempty"></span>
+				创建新门店
+			</button>
+			<a href="javascript:void(0);" class="marT20 disB textC" onclick="location.href='login.html'">退出登录</a>
+		</section>
+		<script src="../js/mui.min.js"></script>
+	</body>
+</html>

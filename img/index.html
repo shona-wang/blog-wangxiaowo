@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nest</title>
+    <style type="text/css">
+        body, table {
+            font-size: 12px;
+        }
+
+        table {
+            table-layout: fixed;
+            empty-cells: show;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        td {
+            height: 30px;
+        }
+
+        h1, h2, h3 {
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .table {
+            width:100%;
+            border: 1px solid #cad9ea;
+            color: #666;
+        }
+
+            .table th {
+                background-repeat: repeat-x;
+                height: 30px;
+            }
+
+            .table td, .table th {
+                border: 1px solid #cad9ea;
+                padding: 0 1em 0;
+            }
+
+            .table tr.alter {
+                background-color: #f5fafe;
+            }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            <span>新增</span>
+        </legend>
+            <input id="file" type="file" name="file" />
+            描述：<textarea id="description" style="vertical-align:middle;" cols="30" rows="5"  name="description"></textarea>
+            <button id="commit">提交</button>
+            预览:<img src=""/>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            <span>检索</span>
+        </legend>
+        从:<input type="date" name="start" class="input">到:<input type="date" name="end" class="input">
+        <button id="search">搜索</button>
+    </fieldset>
+    <table class="table">
+        <caption>img 列表</caption>
+        <thead>
+            <tr>
+                <th width="5%">id</th>
+                <th width="40%">url</th>
+                <th width="30%">description</th>
+                <th width="15%">ctime</th>
+                <th width="10%">操作</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        //var domain = "http://img.wangxiaowo.com/",
+        var domain = "http://localhost:16292/";
+         page = {
+            pageIndex: 0,
+            pageSize: 20,
+            sortField: "ctime",
+            sortOrder: "desc",
+            total: 0
+        };
+        function render(param) {
+            var def = $.Deferred();
+            var data = {
+                pageIndex: 1,
+                pageSize: 20,
+                sortField: "ctime",
+                sortOrder: "desc",
+            };
+            if (param) {
+                var data = $.extend(data, param);
+            } else {
+                data = {
+                    pageIndex: page.pageIndex,
+                    pageSize: page.pageSize,
+                    sortField: page.sortField,
+                    sortOrder: page.sortOrder
+                };
+            }
+            $.post("./service.aspx?method=query", data, function (text) {
+                if (text != "-1") {
+                    text = JSON.parse(text);
+                    page.total = text.total;
+                    page.pageIndex++;
+                    var html = "";
+                    text.data.forEach(function (e) {
+                        html += '<tr>';
+                        html += '<td>' + e["id"] + '</td>';
+                        html += '<td><a target="_blank" href = "' + domain + e["url"] + '">' + domain + e["url"] + '</a></td>';
+                        html += '<td>' + e["description"] + '</td>';
+                        html += '<td>' + e["ctime"] + '</td>';
+                        html += '<td><a href="javascript:void(0)">删除</a></td>';
+                        html += '</tr>';
+                    });
+                    $("tbody").html(html);
+                    def.resolve();
+                } else {
+                    alert("数据检索出错!");
+                    def.reject();
+                }
+            });
+            return def;
+        }
+
+        function commit() {
+            var file = $("#file")[0].files[0];
+            fileUploader({
+                url: "./service.aspx?method=insert",
+                data: {
+                    description: $("#description").val()
+                },
+                file: file
+            }).done(function (text) {
+                alert("保存成功!");
+                render();
+            }).fail(function(err){
+                console.log(err);
+                alert("保存失败!");
+            });
+        }
+
+        function search() {
+            var obj = {
+                start: $("#start").val(),
+                end:$("#end").val()
+            };
+            render(obj);
+        }
+
+
+        
+        /**
+          * 文件上传
+          * settings:{
+          *   data:{}
+          *   url:"",
+          *   file:file
+          * }
+          */
+        fileUploader = function (settings) {
+            var def = $.Deferred(),
+                s = settings;
+            //url = CONFIG.UPLOAD+"?sid="+Utils.getCookie("sid")+"&name="+encodeURIComponent(data.name)+"&activity="+data.activity,
+            //_file = $("input[name^=path]")[0].files[0],
+            //将参数拼接到url上
+            if (s.data) {
+                s.url += "&";
+                for (var k in s.data) {
+                    s.url += k + "=" + s.data[k] + "&";
+                }
+                s.url = s.url.substr(0, s.url.length - 1);
+            }
+            if (s.file && s.file instanceof File) {
+                var reader = new FileReader();
+                reader.addEventListener('loadend', function () {
+                    var upfile = function (blob, type) {
+                        var xhr = new XMLHttpRequest();
+                        xhr.onreadystatechange = function (text) {
+                            if (xhr.readyState == 4 && xhr.status == 200) {
+                                if (text != "-1") {
+                                    def.resolve(text);
+                                } else {
+                                    def.reject(text);
+                                }
+                            }
+                        };
+                        xhr.open('POST', s.url);
+                        xhr.setRequestHeader('Content-Type', type);
+                        xhr.setRequestHeader('Filename', encodeURIComponent(s.file.name));
+                        xhr.send(blob);
+                    };
+                    upfile(new Blob([reader.result], {
+                        type: s.file.type
+                    }), s.file.type);
+                });
+                reader.readAsArrayBuffer(s.file);
+            } else {
+                ajax(s.url).done(function (text) {
+                    def.resolve(text);
+                }).fail(function (err) {
+                    def.reject(err);
+                }).always(function () {
+                });
+            }
+            return def;
+        };
+
+        $(function () {
+            render().done(function () {
+                $("#commit").on("click", function (e) {
+                    commit();
+                });
+                $("#search").on("click", function (e) {
+                    search();
+                });
+                $("tr").on("click", function (e) {
+                    $("img").attr("src",$(this).children().eq(1).text());
+                });
+            });
+        });
+    </script>
+</body>
+</html>

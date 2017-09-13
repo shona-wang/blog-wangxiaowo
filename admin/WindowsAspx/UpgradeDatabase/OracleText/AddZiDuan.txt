@@ -1,0 +1,304 @@
+﻿/*此执行语句需要单步执行,执行工具PL/SQL*/
+/*2.为数据表增加字段*/
+/*菜单表序号*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('Display_Zb')  and t.column_name = upper('XH');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+          alter table Display_Zb add  XH number  
+          ';
+end if;
+end;
+
+
+/*角色权限表fjddm*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('sysGroupPower')  and t.column_name = upper('parentid');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+         alter table sysGroupPower add parentid VARCHAR2(50)	
+          ';
+end if;
+end;
+
+
+/*角色权限表Target*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('sysGroupPower')  and t.column_name = upper('Target');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+         alter table sysGroupPower add Target   Varchar2(50)	
+          ';
+end if;
+end;
+
+
+/*角色权限表LRXGRY*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('sysGroupPower')  and t.column_name = upper('LRXGRY');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+         alter table sysGroupPower add LRXGRY  Varchar2(50)	
+          ';
+end if;
+end;
+
+
+/*角色权限表LRXGSJ*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('sysGroupPower')  and t.column_name = upper('LRXGSJ');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+         alter table sysGroupPower add LRXGSJ  date	
+          ';
+end if;
+end;
+
+/*用户角色表LRXGRY*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('sysEmpRoles')  and t.column_name = upper('LRXGRY');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+         alter table sysEmpRoles add LRXGRY  Varchar2(50) 
+          ';
+end if;
+end;
+
+
+
+/*用户角色表LRXGSJ*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('sysEmpRoles')  and t.column_name = upper('LRXGSJ');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+        alter table sysEmpRoles add LRXGSJ  date 
+          ';
+end if;
+end;
+
+
+
+
+/*角色表LRXGRY*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('sysRolesDic')  and t.column_name = upper('LRXGRY');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+        alter table sysRolesDic  add LRXGRY  Varchar2(50)
+          ';
+end if;
+end;
+
+
+/*角色表LRXGSJ*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('sysRolesDic')  and t.column_name = upper('LRXGSJ');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+        alter table sysRolesDic  add LRXGSJ  Varchar2(50)
+          ';
+end if;
+end;
+
+
+
+/*组织机构表fjddm*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('Table38')  and t.column_name = upper('FJDDM');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+        alter table Table38  add FJDDM    Varchar2(50)	
+          ';
+end if;
+end;
+
+
+
+/*组织机构表xh*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('Table38')  and t.column_name = upper('XH');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+        alter table Table38  add XH    number
+          ';
+end if;
+end;
+
+
+/*组织机构表xh*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('Table38')  and t.column_name = upper('JD');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+        alter table Table38  add JD    Varchar2(50)	
+          ';
+end if;
+end;
+
+/*组织机构表xh*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('Table38')  and t.column_name = upper('WD');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+        alter table Table38  add WD    Varchar2(50)	
+          ';
+end if;
+end;
+
+/*人员登记表SJFW*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('RYDJ')  and t.column_name = upper('SJFW');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+          alter table RYDJ add SJFW  Varchar2(50)
+          ';
+end if;
+end;
+
+/*人员登记表Relatedyhm*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('RYDJ')  and t.column_name = upper('Relatedyhm');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+          alter table RYDJ add Relatedyhm  Varchar2(50)
+          ';
+end if;
+end;
+
+/*人员登记表LXDH*/
+declare columnExistedCount number;   --声明变量存储要查询的表中的列是否存在
+begin
+        --从系统表中查询表中的列是否存在
+         select count(1) into columnExistedCount from user_tab_columns t where t.table_name = upper('RYDJ')  and t.column_name = upper('LXDH');     
+        --如果不存在，使用快速执行语句添加Age列
+        if columnExistedCount = 0 then 
+         execute immediate
+         '  
+          alter table RYDJ add LXDH  Varchar2(50)
+          ';
+end if;
+end;
+
+
+/*3.跟新数据表的字段值*/
+  update rydj set sjfw='QB' Where yhm='admin';
+  update rydj set sjfw='BR' Where yhm<>'admin';
+  update rydj set Relatedyhm=yhm
+  update Display_Zb Set buttonid='';
+  update  table38 set fjddm='0' where lx=1 ;
+  update  table38 set fjddm=left(jddm,len(jddm)-2) where lx=0 ;
+
+
+/*4.重新建立视图*/
+
+/*试图ST_RYDJ 建立*/
+
+
+ CREATE OR REPLACE VIEW ST_RYDJ
+
+　　AS SELECT     RYDJ.YHM, RYDJ.YHMM, RYDJ.XX, RYDJ.ZW, RYDJ.DW, RYDJ.LRXGRY, 
+
+RYDJ.DELETEBS, RYDJ.SRM, 
+                      RYDJ.MACID, CASE WHEN NVL(RYDJ.SFBD, '') = 1 THEN '是' ELSE '否' END 
+
+AS SFBD, CASE WHEN NVL(TABLE39.SF, '') 
+                      = 1 THEN '是' ELSE '否' END AS SF, CASE WHEN NVL(TABLE39.SF_1, '') = 
+
+1 THEN '是' ELSE '否' END AS SF_1, 
+                      CASE WHEN NVL(TABLE39.SF_2, '') = 1 THEN '是' ELSE '否' END AS SF_2, 
+
+CASE WHEN NVL(TABLE39.SF_3, '') 
+                      = 1 THEN '是' ELSE '否' END AS SF_3, TABLE38.DWID, TABLE38.BM, 
+
+TABLE38.mc AS DWMC, TABLE38.lx, TABLE38.JDDM, 
+                      TABLE37.mc AS ZWMC, RYDJ.ACCOUNTNUM, RYDJ.RELATEDYHM
+FROM         RYDJ LEFT OUTER JOIN
+                      TABLE39 ON RYDJ.yhm = TABLE39.yhm AND RYDJ.AccountNum = 
+
+TABLE39.AccountNum LEFT OUTER JOIN
+                      TABLE38 ON TABLE39.DWID = TABLE38.DWID AND TABLE39.AccountNum = 
+
+TABLE38.AccountNum LEFT OUTER JOIN
+                      TABLE37 ON TABLE39.ZWID = TABLE37.zwid AND TABLE39.AccountNum = 
+
+TABLE37.AccountNum
+                      
+
+
+/*试图ST_TABLE38 建立*/
+
+CREATE OR REPLACE VIEW ST_TABLE38 AS
+SELECT     TABLE38.AccountNum, TABLE38.DWID, TABLE38.BM AS BMBM, TABLE38.mc AS BMMC, 
+
+TABLE38.lx, TABLE38.dz,
+                      TABLE38.zyyw, TABLE38.dh, TABLE38.lxR, TABLE38.wz, TABLE38.qt, 
+
+TABLE38.JDDM, TABLE38.FJDDM AS FID,
+                      T1.mc AS FJDDMText, TABLE38.lrxgsj, TABLE38.lrxgryzh, TABLE38.xh,
+                      TABLE38.JD,TABLE38.WD
+FROM         TABLE38 LEFT OUTER JOIN
+                          (SELECT     mc, JDDM, AccountNum
+                            FROM         TABLE38  TABLE38_1
+                            GROUP BY mc, JDDM, AccountNum)  T1 ON TABLE38.FJDDM = T1.JDDM 
+
+AND TABLE38.AccountNum = T1.AccountNum

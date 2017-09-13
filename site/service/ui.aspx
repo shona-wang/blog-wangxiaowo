@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ui.aspx.cs" Inherits="service_ui" %>

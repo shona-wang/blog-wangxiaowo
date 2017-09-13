@@ -1,0 +1,66 @@
+2015-09-10 16:25:52,952 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 关键字 'function' 附近有语法错误。
+关键字 'function' 附近有语法错误。
+Select TOP        100 * FROM (Select TOP        100 * FROM YLZ_XYXX Where (1=1) AND BMBS = '0' AND YQSJQ > function Date() { [native code] } orDER BY QQHM DESC ) AS TMP  orDER BY QQHM ASC
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader()
+   在 KY.DataHelper.SqlDataHelper.EX_SpGetReturnValue(String spName, String[] returnKey, Hashtable& returnValue, DataTable& returnTable, Hashtable HashreturnValue) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\SqlDataHelper.cs:行号 681
+2015-09-10 16:25:52,967 [DEBUG] 
+ -- 错误信息
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 KY.ERPOffice.Common.MyDateType.MyObjectDate(String cpName, String spName, Page_Index Page_index, DataTable& Ds) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\MyDateType.cs:行号 60
+2015-09-10 16:46:37,611 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 关键字 'function' 附近有语法错误。
+关键字 'function' 附近有语法错误。
+Select TOP        100 * FROM (Select TOP        100 * FROM YLZ_XYXX Where (1=1) AND BMBS = '0' AND YQSJQ > function Date() { [native code] } orDER BY QQHM DESC ) AS TMP  orDER BY QQHM ASC
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader()
+   在 KY.DataHelper.SqlDataHelper.EX_SpGetReturnValue(String spName, String[] returnKey, Hashtable& returnValue, DataTable& returnTable, Hashtable HashreturnValue) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\SqlDataHelper.cs:行号 681
+2015-09-10 16:46:37,618 [DEBUG] 
+ -- 错误信息
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 KY.ERPOffice.Common.MyDateType.MyObjectDate(String cpName, String spName, Page_Index Page_index, DataTable& Ds) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\MyDateType.cs:行号 60
+2015-09-10 18:08:23,737 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 关键字 'function' 附近有语法错误。
+关键字 'function' 附近有语法错误。
+Select TOP        100 * FROM (Select TOP        100 * FROM YLZ_XYXX Where (1=1) AND BMBS = '0' AND YQSJQ > function Date() { [native code] } orDER BY QQHM DESC ) AS TMP  orDER BY QQHM ASC
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader()
+   在 KY.DataHelper.SqlDataHelper.EX_SpGetReturnValue(String spName, String[] returnKey, Hashtable& returnValue, DataTable& returnTable, Hashtable HashreturnValue) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\SqlDataHelper.cs:行号 681
+2015-09-10 18:08:23,738 [DEBUG] 
+ -- 错误信息
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 KY.ERPOffice.Common.MyDateType.MyObjectDate(String cpName, String spName, Page_Index Page_index, DataTable& Ds) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\MyDateType.cs:行号 60

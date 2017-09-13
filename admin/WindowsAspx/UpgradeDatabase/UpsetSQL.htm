@@ -1,0 +1,512 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>系统升级</title>
+
+    <script src="../../scripts/boot.js" type="text/javascript"></script>
+
+  <style type="text/css">
+        html, body
+        {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="mini-toolbar" style="padding: 2px; border-bottom: 0;">
+        <a id="zxA" class="mini-button" iconcls="icon-ok" onclick="Save" plain="true">执行</a>
+    </div>
+    <fieldset id="Fieldset1">
+        <legend>执行语句</legend><span style="color: Red; font-size: 18px;">请注意:&nbsp;&nbsp;&nbsp;
+            1.一定要在系统管理员的辅助下操作!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.不可随便操作!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.目前仅支持SQLServer</span><br />
+        <span id="span1">特别说明:1.主要判断是否存在缺少系统表<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.如果缺少则建立<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.Oracle执行文本<a href="OracleText/CreateTable.txt">下载</a>,SQL文本<a href="SQLText/CreateTable.txt">下载</a>
+            <!-- --1.建表<br />
+--**按钮表建立<br />
+if exists (select * from sysobjects where id = object_id('sysButtonCtion'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[sysButtonCtion] (
+	[ID] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[Guid] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[ButtonName] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ButtonTiele] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ButtonMin] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Buttonicon] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ButtonRemak] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[CJSJ] [datetime] NULL ,
+	[CJZH] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ButtoniconName] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+insert sysButtonCtion values('Button-20140124-00001','增加','增加','Add','icon-add','通用','009','2014-2-26 8:49:06','admin','add.gif')
+insert sysButtonCtion values('Button-20140220-00001','设计','设计','click','icon-expand','报表设计管理','009','2014-2-20 10:00:42','admin','expand.gif')
+insert sysButtonCtion values('Button-20140220-00002','删除根节点','删除根节点','click','icon-expand','组织机构管理','009','2014-2-20 10:02:40','admin','expand.gif')
+insert sysButtonCtion values('Button-20140220-00003','管理范围设置','管理范围设置','click','icon-collapse','用户权限设置','009','2014-2-20 15:08:01','admin','collapse.gif')
+insert sysButtonCtion values('Button-20140218-00009','用户角色设置','用户角色设置','click','icon-lock','用户权限设置','009','2014-2-20 15:33:52','lln','lock.png')
+insert sysButtonCtion values('Button-20140227-00001','上移','上移','click','icon-collapse','通用','009','2014-2-27 9:15:30','admin','collapse.gif')
+insert sysButtonCtion values('Button-20140227-00002','下移','下移','click','icon-collapse','通用','009','2014-2-27 9:15:50','admin','collapse.gif')
+insert sysButtonCtion values('Button-20140227-00003','操作保存','操作保存','click','icon-date','通用','009','2014-2-27 9:48:18','admin','date.gif')
+insert sysButtonCtion values('Button-20140227-00004','排序保存','排序保存','click','icon-collapse','通用','009','2014-2-27 9:48:48','admin','collapse.gif')
+insert sysButtonCtion values('Button-20140124-00002','编辑','编辑','Edit','icon-addnew','通用','009','2014-2-18 17:12:22','admin','addnew.gif')
+insert sysButtonCtion values('Button-20140124-00003','删除','删除','Delete','icon-remove','通用','009','2014-2-18 17:12:36','admin','remove.gif')
+insert sysButtonCtion values('Button-20140218-00001','设置密码','设置密码','click','icon-user','人员管理','009','2014-2-18 17:12:58','admin','user.png')
+insert sysButtonCtion values('Button-20140218-00002','设置部门','设置部门','click','icon-add','人员管理','009','2014-2-18 17:13:12','admin','add.gif')
+insert sysButtonCtion values('Button-20140218-00003','设置角色','设置角色','click','icon-collapse','人员管理','009','2014-2-18 17:13:23','admin','collapse.gif')
+insert sysButtonCtion values('Button-20140218-00004','设置用户','设置用户','click','icon-collapse','角色管理','009','2014-2-18 17:15:15','admin','collapse.gif')
+insert sysButtonCtion values('Button-20140218-00005','保存','保存','click','icon-save','通用','009','2014-2-18 17:16:48','admin','save.gif')
+insert sysButtonCtion values('Button-20140218-00006','关联按钮','关联按钮','click','icon-collapse','菜单管理','009','2014-2-18 17:18:59','admin','collapse.gif')
+insert sysButtonCtion values('Button-20140218-00007','查询','查询','click','icon-zoomout','通用','009','2014-2-18 17:20:39','admin','zoomout.gif')
+insert sysButtonCtion values('Button-20140218-00008','用户权限批量设置','用户权限批量设置','click','icon-lock','用户权限设置','009','2014-2-18 17:21:20','admin','lock.png')
+insert sysButtonCtion values('Button-20140218-00010','用户权限设置','用户权限设置','click','icon-edit','用户权限设置','009','2014-2-18 17:23:43','admin','edit.gif')
+insert sysButtonCtion values('Button-20140218-00011','设置权限','设置权限','click','icon-edit','角色权限设置','009','2014-2-18 17:27:49','admin','edit.gif')
+insert sysButtonCtion values('Button-20140218-00012','设置用户','设置用户','click','icon-downgrade','角色权限设置','009','2014-2-18 17:28:14','admin','downgrade.gif')
+End
+<br />
+--**组织机构权限表建立<br />
+if exists (select * from sysobjects where id = object_id('SysGroupPowerOrganization'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[SysGroupPowerOrganization] (
+	[ID] [int] IDENTITY (1, 1) NOT NULL ,
+	[FuncID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[parentid] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Target] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[DWID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[KFDM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRXGRY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRXGSJ] [datetime] NULL 
+) ON [PRIMARY]
+End
+<br />
+--**职位权限表建立<br />
+if exists (select * from sysobjects where id = object_id('SysGroupPowerPositiion'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[SysGroupPowerPositiion] (
+	[ID] [int] IDENTITY (1, 1) NOT NULL ,
+	[FuncID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[parentid] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Target] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ZWID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[KFDM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRXGRY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRXGSJ] [datetime] NULL 
+) ON [PRIMARY]
+End
+<br />
+--**用户权限表建立<br />
+if exists (select * from sysobjects where id = object_id('SysGroupPowerUser'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[SysGroupPowerUser] (
+	[ID] [int] IDENTITY (1, 1) NOT NULL ,
+	[FuncID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[parentid] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Target] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Userid] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[KFDM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRXGRY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRXGSJ] [datetime] NULL 
+) ON [PRIMARY]
+End
+<br />
+--**字典表建立<br />
+if exists (select * from sysobjects where id = object_id('KY_ZD'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[KY_ZD] (
+	[ID] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[DJBH] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[MC] [varchar] (100) COLLATE Chinese_PRC_CI_AS NULL ,
+	[YWLX] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[YWLXMC] [varchar] (100) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRRY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRSJ] [datetime] NULL ,
+	[XH] [int] NULL ,
+	[BZ] [varchar] (100) COLLATE Chinese_PRC_CI_AS NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+End
+
+--**附件表建立<br />
+if exists (select * from sysobjects where id = object_id('KY_FJ'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[KY_FJ] (
+	[id] [int] IDENTITY (1, 1) NOT NULL ,
+	[DocId] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[DocBh] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[Docname] [nvarchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[size] [bigint] NULL ,
+	[FType] [nvarchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[FPath] [varchar] (250) COLLATE Chinese_PRC_CI_AS NULL ,
+	[SFML] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRRY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRSJ] [datetime] NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+End
+<br />
+--**消息表建立<br />
+if exists (select * from sysobjects where id = object_id('BaseMessage'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[BaseMessage] (
+	[ID] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[XXLX] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[XXLXMC] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LTXXZT] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[XXNR] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[URL] [varchar] (100) COLLATE Chinese_PRC_CI_AS NULL ,
+	[JSUserid] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[JSName] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[XXZT] [char] (1) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LLRYDWID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LLRYDWMC] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRRYZH] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRRYXM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRSJ] [datetime] NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+End-->
+        </span>
+    </fieldset>
+    <div class="mini-toolbar" style="padding: 2px; border-bottom: 0;">
+        <a id="zxB" class="mini-button" iconcls="icon-ok" onclick="Save" plain="true">执行</a>
+    </div>
+    <fieldset id="Fieldset2">
+        <legend>执行语句</legend><span style="color: Red; font-size: 18px;">请注意:&nbsp;&nbsp;&nbsp;
+            1.一定要在系统管理员的辅助下操作!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.不可随便操作!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.目前仅支持SQLServer</span><br />
+        <span id="span2">特别说明:1.主要判断是否系统表中缺少字段<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.如果缺少则建立<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.Oracle执行文本<a href="OracleText/AddZiDuan.txt">下载</a> ,SQL文本<a href="SQLText/AddZiDuan.txt">下载</a>
+            <!--  --2.为数据表增加字段<br />
+if exists (select * from syscolumns where id=object_id('Display_Zb') and name='XH')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table Display_Zb add  XH int 
+end
+<br />
+if exists (select * from syscolumns where id=object_id('dbo.sysGroupPower') and name='parentid')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table dbo.sysGroupPower add parentid Varchar(50)	
+end
+<br />    
+if exists (select * from syscolumns where id=object_id('dbo.sysGroupPower') and name='Target')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table dbo.sysGroupPower add Target   Varchar(50)	 	
+end
+ <br />   
+if exists (select * from syscolumns where id=object_id('dbo.sysGroupPower') and name='LRXGRY')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table dbo.sysGroupPower add LRXGRY  Varchar(50)	 	
+end
+   
+if exists (select * from syscolumns where id=object_id('dbo.sysGroupPower') and name='LRXGSJ')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table dbo.sysGroupPower add LRXGSJ  datetime	 	
+end
+<br />
+if exists (select * from syscolumns where id=object_id('sysEmpRoles')     and     name='LRXGRY')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table sysEmpRoles add LRXGRY  Varchar(50) 	
+end
+<br />    
+if exists (select * from syscolumns where id=object_id('sysEmpRoles')     and     name='LRXGSJ')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table sysEmpRoles add LRXGSJ  datetime 	
+end
+ <br />    
+if exists (select * from syscolumns where id=object_id('sysRolesDic')     and     name='LRXGRY')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table sysRolesDic  add LRXGRY  Varchar(50)
+end
+<br />
+if exists (select * from syscolumns where id=object_id('sysRolesDic')     and     name='LRXGSJ')  
+print    
+'存在'
+else  begin print '不存在' 
+    alter table sysRolesDic add LRXGSJ  datetime	
+end
+<br />       
+if exists (select * from syscolumns where id=object_id('Table38')     and     name='FJDDM')  
+print    
+'存在'
+else  begin print '不存在' 
+    alter table Table38  add FJDDM    Varchar(50)	
+end
+ <br />   
+if    
+exists     (select     *     from     syscolumns     where    
+id=object_id('Table38')     and     name='xh')  
+print    
+'存在'
+else  begin print '不存在' 
+    alter table Table38 add xh      int
+end
+<br />
+if exists (select * from syscolumns where    
+id=object_id('RYDJ')     and     name='SJFW')  
+print    
+'存在'
+else  begin print '不存在' 
+    alter table RYDJ add SJFW  Varchar(50)
+end  
+<br />
+--3.跟新数据表的字段值
+  <br />
+  update rydj set sjfw='QB' Where yhm='admin'<br />
+  update rydj set sjfw='BR' Where yhm<>'admin'<br />
+  update Display_Zb Set buttonid=''<br />
+  update  table38 set fjddm='0' where lx=1 <br />
+  update  table38 set fjddm=left(jddm,len(jddm)-2) where lx=0
+  <br /> 
+--4.重新建立视图<br />
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[ST_RYDJ]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[ST_RYDJ]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[ST_TABLE38]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[ST_TABLE38]
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE VIEW dbo.ST_RYDJ
+AS
+SELECT     dbo.RYDJ.yhm, dbo.RYDJ.yhmm, dbo.RYDJ.xx, dbo.RYDJ.zw, dbo.RYDJ.dw, dbo.RYDJ.lrxgry, dbo.RYDJ.DeleteBs, dbo.RYDJ.SRM, 
+                      dbo.RYDJ.MACID, CASE WHEN isnull(dbo.RYDJ.SFBD, '') = 1 THEN '是' ELSE '否' END AS sfbd, CASE WHEN isnull(dbo.TABLE39.SF, '') 
+                      = 1 THEN '是' ELSE '否' END AS SF, CASE WHEN isnull(dbo.TABLE39.SF_1, '') = 1 THEN '是' ELSE '否' END AS SF_1, 
+                      CASE WHEN isnull(dbo.TABLE39.SF_2, '') = 1 THEN '是' ELSE '否' END AS SF_2, CASE WHEN isnull(dbo.TABLE39.SF_3, '') 
+                      = 1 THEN '是' ELSE '否' END AS SF_3, dbo.TABLE38.DWID, dbo.TABLE38.BM, dbo.TABLE38.mc AS DWMC, dbo.TABLE38.lx, dbo.TABLE38.JDDM, 
+                      dbo.TABLE37.mc AS ZWMC, dbo.RYDJ.AccountNum
+FROM         dbo.RYDJ LEFT OUTER JOIN
+                      dbo.TABLE39 ON dbo.RYDJ.yhm = dbo.TABLE39.yhm AND dbo.RYDJ.AccountNum = dbo.TABLE39.AccountNum LEFT OUTER JOIN
+                      dbo.TABLE38 ON dbo.TABLE39.DWID = dbo.TABLE38.DWID AND dbo.TABLE39.AccountNum = dbo.TABLE38.AccountNum LEFT OUTER JOIN
+                      dbo.TABLE37 ON dbo.TABLE39.ZWID = dbo.TABLE37.zwid AND dbo.TABLE39.AccountNum = dbo.TABLE37.AccountNum
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE VIEW dbo.ST_TABLE38
+AS
+SELECT     dbo.TABLE38.AccountNum, dbo.TABLE38.DWID, dbo.TABLE38.BM AS BMBM, dbo.TABLE38.mc AS BMMC, dbo.TABLE38.lx, dbo.TABLE38.dz, 
+                      dbo.TABLE38.zyyw, dbo.TABLE38.dh, dbo.TABLE38.lxR, dbo.TABLE38.wz, dbo.TABLE38.qt, dbo.TABLE38.JDDM, dbo.TABLE38.FJDDM AS FID, 
+                      T1.mc AS FJDDMText, dbo.TABLE38.lrxgsj, dbo.TABLE38.lrxgryzh, dbo.TABLE38.xh
+FROM         dbo.TABLE38 LEFT OUTER JOIN
+                          (SELECT     mc, JDDM, AccountNum
+                            FROM          dbo.TABLE38 AS TABLE38_1
+                            GROUP BY mc, JDDM, AccountNum) AS T1 ON dbo.TABLE38.FJDDM = T1.JDDM AND dbo.TABLE38.AccountNum = T1.AccountNum
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO-->
+        
+        </span>
+    </fieldset>
+       <div class="mini-toolbar" style="padding: 2px; border-bottom: 0;">
+        <a id="zxC" class="mini-button" iconcls="icon-ok" onclick="Save" plain="true">执行</a>
+    </div>
+    <fieldset id="Fieldset3">
+        <legend>执行语句</legend><span style="color: Red; font-size: 18px;">请注意:&nbsp;&nbsp;&nbsp;
+            1.一定要在系统管理员的辅助下操作!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.不可随便操作!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.目前仅支持SQLServer</span><br />
+        <span id="span3">
+        特别说明:1.插入系统的初始数据<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              2.这里会插入系统菜单,在执行前要删除以前的系统菜单<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              3.业务菜单保留
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.Oracle执行文本<a href="OracleText/AddDatabase.txt">下载</a> ,SQL文本<a href="SQLText/AddDatabase.txt">下载</a>
+            <!----4.插入初始信息<br />
+--人员登记表插入<br />
+  Delete From Rydj Where hym in ('admin','system','systemaudit','systemsecure')<br />
+  insert RYDJ values('admin','3244185981728979115075721453575112','超级管理员','15947520133','','','2010-12-27 14:49:07','admin','0','009','1','','0','','QB')<br />
+  insert RYDJ values('system','3244185981728979115075721453575112','系统管理员','','','admin','2014-2-25 15:19:48','','0','009','1','','0','','QB')<br />
+  insert RYDJ values('systemaudit','3244185981728979115075721453575112','系统审计员','','','admin','2014-2-25 15:21:34','','0','009','3','','0','','QB')<br />
+  insert RYDJ values('systemsecure','3244185981728979115075721453575112','系统安全员','','','admin','2014-2-25 15:20:40','','0','009','2','','0','','QB')<br />
+--菜单表<br />
+insert Display_Zb values('003590','250112','Button-20140124-00001','增加','','Onclick','1','009','','','','','add.gif',1)<br />
+insert Display_Zb values('003591','250112','Button-20140124-00002','编辑','','Onclick','1','009','','','','','addnew.gif',2)<br />
+insert Display_Zb values('003592','250112','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif',3)<br />
+insert Display_Zb values('01024550','250110','Button-20140124-00002','编辑','','Onclick','1','009','','','','','addnew.gif',2)<br />
+insert Display_Zb values('01024551','250110','Button-20140124-00001','增加','','Onclick','1','009','','','','','add.gif',1)<br />
+insert Display_Zb values('01024552','250110','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif',3)<br />
+insert Display_Zb values('026220','250114','Button-20140220-00001','设计','','Onclick','1','009','','','','','expand.gif','')<br />
+insert Display_Zb values('03000180','250105','Button-20140124-00001','增加','','Onclick','1','009','','','','','add.gif',1)<br />
+insert Display_Zb values('03000181','250105','Button-20140124-00002','编辑','','Onclick','1','009','','','','','addnew.gif',2)<br />
+insert Display_Zb values('10500810','250907','Button-20140218-00007','查询','','Onclick','1','009','','','','','zoomout.gif','')<br />
+insert Display_Zb values('12715140','250102','Button-20140124-00001','增加','','Onclick','1','009','','','','','add.gif',1)<br />
+insert Display_Zb values('12715141','250102','Button-20140124-00002','编辑','','Onclick','1','009','','','','','addnew.gif',2)<br />
+insert Display_Zb values('12715142','250102','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif',3)<br />
+insert Display_Zb values('12985120','250112','Button-20140227-00001','上移','','Onclick','1','009','','','','','collapse.gif',5)<br />
+insert Display_Zb values('12985121','250112','Button-20140227-00002','下移','','Onclick','1','009','','','','','collapse.gif',6)<br />
+insert Display_Zb values('14828270','250101','Button-20140218-00007','查询','','Onclick','1','009','','','','','zoomout.gif',7)<br />
+insert Display_Zb values('18202160','250909','Button-20140124-00001','增加','','Onclick','1','009','','','','','add.gif','')<br />
+insert Display_Zb values('18202163','250113','Button-20140218-00006','关联按钮','','Onclick','1','009','','','','','collapse.gif',7)<br />
+insert Display_Zb values('18669490','250907','Button-20140218-00011','设置权限','','Onclick','1','009','','','','','edit.gif','')<br />
+insert Display_Zb values('21258760','250901','Button-20140220-00003','管理范围设置','','Onclick','1','009','','','','','collapse.gif',4)<br />
+insert Display_Zb values('22987880','250113','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif',2)<br />
+insert Display_Zb values('25','0','0','系统管理','','Iframe','1','009','','','','','collapse.gif',1)<br />
+insert Display_Zb values('2501','25','25','基础信息管理','','Iframe','1','009','','','','','addnew.gif','')<br />
+insert Display_Zb values('250101','2501','2501','用户管理','WindowsAspx/Userindex.aspx','Iframe','1','009','','','','','user.png',1)<br />
+insert Display_Zb values('250102','2501','','职位管理','WindowsAspx/PositiionAddEdit.aspx','Iframe','1','009','','','','','expand.gif',2)<br />
+insert Display_Zb values('250105','2501','','角色管理','WindowsAspx/sysRolesDic_index.aspx','Iframe','1','009','','','','','filter.gif',3)<br />
+insert Display_Zb values('250109','2501','','修改密码','WindowsAspx/Pwd_Edit.aspx','Iframe','1','009','','','','','lock.png',4)<br />
+insert Display_Zb values('250110','2501','2501','按钮管理','WindowsAspx/sysButtonCtion_index.aspx','Iframe','1','009','','','','','addfolder.gif',5)<br />
+insert Display_Zb values('250112','2501','2501','组织机构管理','WindowsAspx/Employees_Treeindex.aspx','Iframe','1','009','','','','','find.png',6)<br />
+insert Display_Zb values('250113','2501','2501','菜单管理','WindowsAspx/Menu_Edit.aspx','Iframe','1','009','','','','','find.png',7)<br />
+insert Display_Zb values('250114','2501','2501','报表设计管理','WindowsAspx/Report_Index.aspx','Iframe','1','009','','','','','date.gif',10)<br />
+insert Display_Zb values('250116','2501','2501','报表插件下载','WindowsAspx/Report_Dow_index.htm','Iframe','1','009','','','','','goto.gif',9)<br />
+insert Display_Zb values('250118','2501','2501','字典管理示例','ZiDian/MinZhu_Index.aspx','Iframe','1','009','','','','','addfolder.gif',8)<br />
+insert Display_Zb values('2503','25','','权限信息管理','','Iframe','1','009','','','','','addfolder.gif',2)<br />
+insert Display_Zb values('2505','25','25','日志管理及异常','','Iframe','1','009','','','','','lock.png',3)<br />
+insert Display_Zb values('250501','2505','2505','日志-用户访问统计','WindowsAspx/Loginfo_UserCount.aspx','Iframe','1','009','','','','','split.gif',1)<br />
+insert Display_Zb values('250503','2505','2505','日志-按用户查询','WindowsAspx/Loginfo_LoginUser.aspx','Iframe','1','009','','','','','split.gif',2)<br />
+insert Display_Zb values('250507','2505','2505','日志-按日期查询','WindowsAspx/Loginfo_Edit.aspx','Iframe','1','009','','','','','split.gif',3)<br />
+insert Display_Zb values('250510','2505','2505','系统-异常管理','WindowsAspx/Exction_Edit.aspx','Iframe','1','009','','','','','unlock.gif',4)<br />
+insert Display_Zb values('250901','2503','2503','用户权限设置','WindowsAspx/User_SysRoles_Index.aspx','Iframe','1','009','','','','','user.png','')<br />
+insert Display_Zb values('250903','2503','2503','角色权限设置','WindowsAspx/SysRoles_User_Index.aspx','Iframe','1','009','','','','','sort.gif','')<br />
+insert Display_Zb values('250905','2503','2503','组织机构权限设置','WindowsAspx/Employees_Rolesindex.aspx','Iframe','1','009','','','','','tip.png','')<br />
+insert Display_Zb values('250907','2503','2503','职位权限设置','WindowsAspx/Positiion_Roles_index.aspx','Iframe','1','009','','','','','addfolder.gif',4)<br />
+insert Display_Zb values('25396140','250118','Button-20140227-00002','下移','','Onclick','1','009','','','','','collapse.gif',4)<br />
+insert Display_Zb values('25396141','250118','Button-20140227-00001','上移','','Onclick','1','009','','','','','collapse.gif',5)<br />
+insert Display_Zb values('25396142','250118','Button-20140218-00005','保存','','Onclick','1','009','','','','','save.gif',6)<br />
+insert Display_Zb values('295130','2601','Button-20140124-00001','增加','','Onclick','1','009','','','','','add.gif','')<br />
+insert Display_Zb values('295131','2601','Button-20140124-00002','编辑','','Onclick','1','009','','','','','addnew.gif','')<br />
+insert Display_Zb values('295132','2601','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif','')<br />
+insert Display_Zb values('34261240','250905','Button-20140218-00011','设置权限','','Onclick','1','009','','','','','edit.gif','')<br />
+insert Display_Zb values('35292340','250113','Button-20140227-00001','上移','','Onclick','1','009','','','','','collapse.gif',4)<br />
+insert Display_Zb values('35292341','250113','Button-20140227-00002','下移','','Onclick','1','009','','','','','collapse.gif',5)<br />
+insert Display_Zb values('380350','2507','Button-20140124-00001','增加','','Onclick','1','009','','','','','add.gif','')<br />
+insert Display_Zb values('380351','2507','Button-20140124-00002','编辑','','Onclick','1','009','','','','','addnew.gif','')<br />
+insert Display_Zb values('380352','2507','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif','')<br />
+insert Display_Zb values('407970','250112','Button-20140220-00002','删除根节点','','Onclick','1','009','','','','','expand.gif',4)<br />
+insert Display_Zb values('40946150','250903','Button-20140218-00011','设置权限','','Onclick','1','009','','','','','edit.gif','')<br />
+insert Display_Zb values('40946151','250903','Button-20140218-00012','设置用户','','Onclick','1','009','','','','','downgrade.gif','')<br />
+insert Display_Zb values('410570','2701','Button-20140218-00007','查询','','Onclick','1','009','','','','','zoomout.gif','')<br />
+insert Display_Zb values('42301470','250101','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif',3)<br />
+insert Display_Zb values('45970290','250113','Button-20140227-00003','操作保存','','Onclick','1','009','','','','','date.gif',3)<br />
+insert Display_Zb values('475412','2701','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif','')<br />
+insert Display_Zb values('48693060','250903','Button-20140218-00007','查询','','Onclick','1','009','','','','','zoomout.gif','')<br />
+insert Display_Zb values('57290850','250105','Button-20140218-00004','设置用户','','Onclick','1','009','','','','','collapse.gif',3)<br />
+insert Display_Zb values('59668030','250102','Button-20140218-00007','查询','','Onclick','1','009','','','','','zoomout.gif',4)<br />
+insert Display_Zb values('60191990','250101','Button-20140124-00001','增加','','Onclick','1','009','','','','','add.gif',1)<br />
+insert Display_Zb values('60191991','250101','Button-20140124-00002','编辑','','Onclick','1','009','','','','','addnew.gif',2)<br />
+insert Display_Zb values('62068660','250118','Button-20140124-00001','增加','','Onclick','1','009','','','','','add.gif',1)<br />
+insert Display_Zb values('62068661','250118','Button-20140124-00002','编辑','','Onclick','1','009','','','','','addnew.gif',2)<br />
+insert Display_Zb values('62068662','250118','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif',3)<br />
+insert Display_Zb values('647050','250112','Button-20140218-00005','保存','','Onclick','1','009','','','','','save.gif',7)<br />
+insert Display_Zb values('65455240','250901','Button-20140218-00007','查询','','Onclick','1','009','','','','','zoomout.gif',5)<br />
+insert Display_Zb values('67368020','250105','Button-20140218-00007','查询','','Onclick','1','009','','','','','zoomout.gif',5)<br />
+insert Display_Zb values('68850080','250909','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif','')<br />
+insert Display_Zb values('72370020','250109','Button-20140124-00001','增加','','Onclick','1','009','','','','','add.gif','')<br />
+insert Display_Zb values('72370021','250109','Button-20140124-00002','编辑','','Onclick','1','009','','','','','addnew.gif','')<br />
+insert Display_Zb values('72370022','250109','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif','')<br />
+insert Display_Zb values('75673370','250113','Button-20140124-00001','增加','','Onclick','1','009','','','','','add.gif',1)<br />
+insert Display_Zb values('763962','2702','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif','')<br />
+insert Display_Zb values('87805980','250901','Button-20140218-00008','用户权限批量设置','','Onclick','1','009','','','','','lock.png',1)<br />
+insert Display_Zb values('87805981','250901','Button-20140218-00009','用户角色设置','','Onclick','1','009','','','','','lock.png',3)<br />
+insert Display_Zb values('87805982','250901','Button-20140218-00010','用户权限设置','','Onclick','1','009','','','','','edit.gif',2)<br />
+insert Display_Zb values('90','0','','工作流','','','0','009','','','','0','','')<br />
+insert Display_Zb values('9001','90','','工作流设计','','','0','009','WorkFlow.dll','WorkFlow.F_FlowShell','@AccountNum','1','','')<br />
+insert Display_Zb values('9002','90','','设置表单','','','0','009','WorkFlow.dll','WorkFlow.F_Memu','@AccountNum','0','','')<br />
+insert Display_Zb values('9003','90','','流程查看','','','0','009','WorkFlow.dll','WorkFlow.F_WF_List','@AccountNum','0','','')<br />
+insert Display_Zb values('9004','90','','日历','','','0','009','WorkCalendar.dll','WorkCalendar.F_CalendarList','@AccountNum','0','','')<br />
+insert Display_Zb values('9005','90','','时间','','','0','009','WorkTimeTable.dll','WorkTimeTable.F_TimeList','@AccountNum','0','','')<br />
+insert Display_Zb values('9006','90','','组织机构管理','','','0','009','WorkGroupClass.dll','WorkGroupClass.F_Main','@KFDM|@AccountNum|@UserID','','','')<br />
+insert Display_Zb values('91329590','250101','Button-20140218-00001','设置密码','','Onclick','1','009','','','','','user.png',4)<br />
+insert Display_Zb values('91329591','250101','Button-20140218-00002','设置部门','','Onclick','1','009','','','','','add.gif',5)<br />
+insert Display_Zb values('91329592','250101','Button-20140218-00003','设置角色','','Onclick','1','009','','','','','collapse.gif',6)<br />
+insert Display_Zb values('91545230','250105','Button-20140124-00003','删除','','Onclick','1','009','','','','','remove.gif',4)<br />
+insert Display_Zb values('939680','2702','Button-20140218-00007','查询','','Onclick','1','009','','','','','zoomout.gif','')<br />
+insert Display_Zb values('96256200','250113','Button-20140227-00004','排序保存','','Onclick','1','009','','','','','collapse.gif',6)<br />-->
+        </span>
+    </fieldset>
+</body>
+</html>
+<script type="text/javascript">
+    mini.parse();
+    function Save(e) {
+        debugger;
+        var _zt = "";
+        if (e.sender.id == "zxA") {
+            _zt = "CreateTable";
+        }
+        if (e.sender.id == "zxB") {
+            _zt = "AddZiDuan";
+        }
+        if (e.sender.id == "zxC") {
+            _zt = "AddDatabase";
+        }
+        mini.confirm("确定要执行吗？", "确定？",
+            function(action) {
+                if (action == "ok") {
+                    $.ajax({
+                        url: "../AspxDate.aspx?method=SQLSave&&Type=" + _zt,
+                        success: function(text) {
+                            if (text !="") {
+                                mini.alert("提示:升级成功！");
+                            }
+                            else {
+                                mini.alert("提示:升级失败！");
+                            }
+                        },
+                        error: function() {
+                        }
+                    });
+                }
+            });
+    }
+ </script>   

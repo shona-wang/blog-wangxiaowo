@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+		
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<meta charset="UTF-8">
+		<title>更多</title>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">更多</h1>
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+				<span class="mui-icon mui-icon-left-nav"></span>返回
+			</button>
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left padL10">
+				关闭
+			</button>
+			<a class="mui-icon mui-icon-more mui-pull-right"></a>
+		</header>
+		<section class="mui-content">
+			<div class="shopWorkerLogo">
+				<img src="../img/shopLogo.jpg" alt="头像" />
+				<h4 class="textC padB20">云海(店掌柜)</h4>
+			</div>
+			<ul class="mui-table-view ">
+				<li class="mui-table-view-cell">
+					<a href="more-editName.html" class="mui-navigate-right">修改姓名</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="more-editPhoneStep1.html" class="mui-navigate-right">修改手机号</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="more-editPassword.html" class="mui-navigate-right">修改密码</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view marT10">
+				<li class="mui-table-view-cell">
+					<a href="more-editShop.html" class="mui-navigate-right">管理门店</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="more-worker.html" class="mui-navigate-right">管理店小二</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view marT10">
+				<li class="mui-table-view-cell">
+					<a href="javascript:void(0);" class="mui-navigate-right">切换团队</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="login.html" class="mui-navigate-right">退出登录</a>
+				</li>
+			</ul>
+			<nav class="mui-bar mui-bar-tab">
+				<a id="defaultTab" class="mui-tab-item borRcc" href="shopWork.html">
+					<!--<span class="mui-icon mui-icon-home"></span>-->
+					<span class="mui-tab-label">门店工作</span>
+				</a>
+				<a class="mui-tab-item borRcc" href="customerFiles.html">
+					<!--<span class="mui-icon mui-icon-extra mui-icon-extra-order"></span>-->
+					<span class="mui-tab-label">客户档案</span>
+				</a>
+				<a class="mui-tab-item mui-active bg00 cff borR00" href="more.html">
+					<!--<span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>-->
+					<span class="mui-tab-label">更多</span>
+				</a>
+			</nav>
+
+
+		</section>	
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui('body').on('tap','a',function(){document.location.href=this.href;});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,228 @@
+
+.wo-form input[type="text"]{
+	height:18px;
+	line-height: 18px;
+	font-size: 12px;
+	color:#555;
+	border-radius: 4px;
+	vertical-align: middle;
+	padding:7px 4px;
+	border: 1px solid #cccccc;
+	background-color: #fff;
+	-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);
+	-moz-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+}
+.wo-form input[type="text"].input-small{
+	width:150px;
+}
+.wo-form input[type="text"].input-medium{
+	width:300px;
+}
+.wo-form input[type="text"].input-large{
+	width:450px;
+}
+.wo-form input[type="text"].input-xlarge{
+	width:600px;
+}
+.wo-form input[type="text"].input-thin{
+	width:300px;
+	padding:5px 5px;
+}
+.wo-form input[type="text"].input-default{
+	width:300px;
+	padding:7px 4px;
+}
+.wo-form input[type="text"].input-fat{
+	width:300px;
+	padding:10px 8px;
+}
+.wo-form input[type="text"].input-xfat{
+	width:300px;
+	padding:12px 8px;
+}
+.wo-form input[type="text"].input-block{
+	display: block;
+	width:100%;
+}
+.wo-form input[disabled]{
+	cursor: not-allowed;
+}
+.wo-form .input-control{
+	position: relative;
+	display:inline-block; 
+}
+.wo-icon{
+	font-family:"iconfont";
+	font-style:normal;
+}
+.wo-form .input-control .wo-icon{
+	position: absolute;
+	color:#aaa;
+	left:6px;
+	top:2px;
+	font-size: 14px;
+}
+.wo-form .input-control .input-thin + .wo-icon{
+	top:6px;
+}
+.wo-form .input-control .input-fat + .wo-icon{
+	top:12px;
+}
+.wo-form .input-control .input-xfat + .wo-icon{
+	top:14px;
+	font-size: 16px;
+}
+.wo-form .control-right .input-xfat + .wo-icon{
+	top:14px;
+	right:6px;
+	left:auto;
+}
+.wo-form .control-right .input-fat + .wo-icon{
+	top:12px;
+	right:6px;
+	left:auto;
+}
+.wo-form .control-right .input-thin + .wo-icon{
+	top:6px;
+	right:6px;
+	left:auto;
+}
+.wo-form input[type="text"].input-warning{
+	border-color:#ffaa00;
+}
+.wo-form input[type="text"].input-error{
+	border-color: #ff5511;
+}
+.wo-form input[type="text"].input-success{
+	border-color: #0fc4b1;
+}
+.wo-form input[type="text"].input-info{
+	border-color: #28b5f5;
+}
+.wo-btn{
+	display:inline-block;
+	padding:6px 12px;
+	font-size:14px;
+	font-weight: 400;
+	text-align: center;
+	vertical-align:middle;
+	cursor:pointer;
+	border-radius: 4px;
+	border:#efefef solid 1px;
+	
+}
+a.wo-btn{
+	text-decoration: none;
+}
+.wo-btn.btn-default:hover,.wo-btn.btn-default:active{
+	border:#eee solid 1px;
+	background: #eee;
+}
+.wo-btn.btn-primary{
+	border:#cc0000 solid 1px;
+	background:#cc0000;
+}
+.wo-btn.btn-primary:hover,.wo-btn.btn-primary:active{
+	border:#990000 solid 1px;
+	background:#990000;
+}
+.wo-btn.btn-success{
+	border:#0fc4b1 solid 1px;
+	background:#0fc4b1;
+}
+.wo-btn.btn-success:hover,.wo-btn.btn-success:active{
+	border:#0c9d8e solid 1px;
+	background:#0c9d8e;
+}
+.wo-btn.btn-warning{
+	border:#ffaa00 solid 1px;
+	background:#ffaa00;
+}
+.wo-btn.btn-warning:hover,.wo-btn.btn-warning:active{
+	border:#e59900 solid 1px;
+	background:#e59900;
+}
+.wo-btn.btn-danger{
+	border:#ff5151 solid 1px;
+	background:#ff5151;
+}
+.wo-btn.btn-danger:hover,.wo-btn.btn-danger:active{
+	border:#cc4141 solid 1px;
+	background:#cc4141;
+}
+.wo-btn.btn-large{
+	padding:10px 14px;
+	font-size:18px;
+	line-height:18px;
+	border-radius:6px;
+}
+.wo-btn.btn-small{
+	padding:3px 5px;
+	font-size:12px;
+	line-height:12px;
+	border-radius:3px;
+}
+.wo-btn.btn-default.btn-bordered{
+	border:#efefef solid  1px;
+	background:none;
+
+}
+.wo-btn.btn-default.btn-bordered:hover{
+	background:#efefef;
+}
+.wo-btn.btn-primary.btn-bordered{
+	border:#cc0000 solid  1px;
+	color:#cc0000;
+	background:none;
+
+}
+.wo-btn.btn-primary.btn-bordered:hover{
+	color:#fff;
+	background:#cc0000;
+}
+.wo-btn.btn-success.btn-bordered{
+	border:#0fc4b1 solid  1px;
+	color:#0fc4b1;
+	background:none;
+
+}
+.wo-btn.btn-success.btn-bordered:hover{
+	color:#fff;
+	background:#0fc4b1;
+
+}
+.wo-btn.btn-warning.btn-bordered{
+	border:#ffaa00 solid  1px;
+	color:#ffaa00;
+	background:none;
+
+}
+.wo-btn.btn-warning.btn-bordered:hover{
+	color:#fff;
+	background:#ffaa00;
+
+}
+.wo-btn.btn-danger.btn-bordered{
+	border:#ff5151 solid  1px;
+	color:#ff5151;
+	background:none;
+}
+.wo-btn.btn-danger.btn-bordered:hover{
+	color:#fff;
+	background:#ff5151;
+}
+.wo-btn[disabled]{
+	pointer-events:none;
+	cursor:not-allowed;
+	box-shadow:none;
+	opacity:none;
+	color:#c6c6c6;
+	background:#f3f3f3;
+	border-color:#e6e6e6;
+}
+.wo-btn.btn-large i{
+
+}

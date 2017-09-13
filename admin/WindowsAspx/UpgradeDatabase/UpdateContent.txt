@@ -1,0 +1,260 @@
+﻿2014.07.01
+  1.清空工作量数据表语句
+    --truncate table table80
+    --truncate table table81
+    --truncate table table82
+    --truncate table table70
+    --truncate table table71
+    --truncate table table72
+    --truncate table table46
+2014.08.01(*必须*)
+1.更新人员可以修改登陆账号、及关联账号。注:以前是不可用修改
+2.菜单维护自动生成powerid字段，可随意配置菜单不可重复。注：以前用户手动填写，容易重复，保存失败，不可灵活配置
+
+2014.08.12(*必须*)
+    1.在系统web.config文件中增加基础信息,系统更加灵活
+     <!-- 首页链接地址 -->
+    <add key="HomeUrl" value="../Flows/Taskulous_index.aspx"/>
+    <!-- 系统名称 -->
+    <add key="WinTitleName" value="开元数码办公自动化系统"/>
+    <!--技术支持-->
+    <add key="TechnicalSupport" value="包头开元数码公司"/>
+    <!--公司网址-->
+    <add key="Website" value="http://www.btkysm.com"/>
+    <!--联系电话-->
+    <add key="ContactTelephone" value="联系电话:0472-3610866"/>
+
+2014.08.14  (*必须*)
+   1.增加工作流示例:FlowDemo/KY_FlowDemo/KY_FlowDemo_index.aspx
+   2.增加帐套号管理:AccountNum/DWXXTABLE/DWXXTABLE_index.aspx
+   3.在DWXXTABLE表中增加:ID自动增长一列，DJKEY主键一列
+   4.设置Display_Zb表的AccountNum、powerid为联合主键;以前是powerid单一主键
+2014.08.16(*必须*)
+   1.sysButtonCtion表AccountNum、Guid为联合主键;以前是Guid单一主键
+
+2014.08.20
+   1.登录时增加硬件加密验证
+   2.人员主界面增加导出功能
+
+
+2014.09.10(*必须*)
+   1.增加了动态表单功能
+   2.用户信息示例DynamicForm/UserArchives/UserArchives_index.aspx
+   3.职位维护修改为动态表单
+   4.角色维护修改为动态表单
+2014.09.11 框架大更新,把框架的字段全部更新为大写，并且每个字段增加了字段说明(*必须*)
+
+	1.table37 表所有的字段改为大写
+	  并且将原来的系统字段替换为
+	  LRRYZH	varchar(50)	Checked
+	  LRRYXM	varchar(50)	Checked
+	  LRSJ	datetime	Checked
+	  LLRYDWID	varchar(50)	Checked
+	  LLRYDWMC	varchar(50)	Checked
+	  ACCOUNTNUM	varchar(50)	Checked
+
+	  update table37 set Accountnum='009'
+
+	2.sysRolesDic 表所有的字段改为大写
+	  并且将原来的系统字段替换为
+	  LRRYZH	varchar(50)	Checked
+	  LRRYXM	varchar(50)	Checked
+	  LRSJ	datetime	Checked
+	  LLRYDWID	varchar(50)	Checked
+	  LLRYDWMC	varchar(50)	Checked
+	  ACCOUNTNUM	varchar(50)	Checked
+	  
+	  update sysRolesDic set Accountnum='009',KFDM='009'
+
+
+	3.Table38 表所有的字段改为大写
+	  并且将原来的系统字段替换为
+	  LRRYZH	varchar(50)	Checked
+	  LRRYXM	varchar(50)	Checked
+	  LRSJ	datetime	Checked
+	  LLRYDWID	varchar(50)	Checked
+	  LLRYDWMC	varchar(50)	Checked
+	  ACCOUNTNUM	varchar(50)	Checked
+	  update Table38 set Accountnum='009'
+	  修改视图ST_TABLE38:TABLE38.LRSJ, dbo.TABLE38.LRRYZH字段
+
+	4.RYDJ表所有的字段改为大写
+	  并且将原来的系统字段替换为
+	  LRRYZH	varchar(50)	Checked
+	  LRRYXM	varchar(50)	Checked
+	  LRSJ	datetime	Checked
+	  LLRYDWID	varchar(50)	Checked
+	  LLRYDWMC	varchar(50)	Checked
+	  ACCOUNTNUM	varchar(50)	Checked
+	  update RYDJ set Accountnum='009'
+	  修改视图ST_RYDJ：RYDJ.LRSJ, RYDJ.LRRYZH字段
+
+	5.Table39 表所有的字段改为大写
+	  并且将原来的系统字段替换为
+	  LRRYZH	varchar(50)	Checked
+	  LRRYXM	varchar(50)	Checked
+	  LRSJ	datetime	Checked
+	  LLRYDWID	varchar(50)	Checked
+	  LLRYDWMC	varchar(50)	Checked
+	  ACCOUNTNUM	varchar(50)	Checked
+	  update Table39 set Accountnum='009'
+
+	6.sysEmpRoles 表所有的字段改为大写
+	  并且将原来的系统字段替换为
+	  LRRYZH	varchar(50)	Checked
+	  LRRYXM	varchar(50)	Checked
+	  LRSJ	datetime	Checked
+	  LLRYDWID	varchar(50)	Checked
+	  LLRYDWMC	varchar(50)	Checked
+	  ACCOUNTNUM	varchar(50)	Checked
+	  update sysEmpRolesset Accountnum='009'
+	  
+2014.09.11(*必须*)
+    1.把KY_Modes、KY_ModesType表的ACCOUNTNUM、DJKEY设置为联合主键
+    
+    
+2014.10.28(*必须*)
+    1.RYDJ表中增加SXSJ datetime  注:用户登录时间状态，判断是否在线
+    
+2014.11.06(*必须*)
+    1.在Display_Zb表中增加“SFFZ”Varchar 50字段，帐套号新增时是否复制此菜单
+    2.将网站后台与程序与框架合并，将网站数据表与框架数据表合并 
+    
+2014.11.18
+    1.修复菜单排序保存bug
+    2.修改字典示例排序保存bug
+    3.菜单保存bug
+
+2014.11.30 (*必须*)
+
+    1.在“RYDJ”表中增加“WEIXINCODE”字段，长度:Vc100，用户名管理微信字段。
+    2.考虑到以后系统用到微信功能，用作将用户与微信用户绑定。
+
+2014.12.05(*必须*)
+
+    1.说明:三员管理增加密码输入错误超过N次以后，将用户名锁定功能
+    2.在“RYDJ”表中增加“MMCC”密码错次字段，int
+    3.修改"ST_RYDJ"试图的“DELETEBS”字段为:CASE WHEN isnull(dbo.RYDJ.DELETEBS, '') = 1 THEN '已锁定' ELSE '正常' END AS DELETEBS
+    4.手动增加一条数据：201412040001	009	是否启用密码锁定	是	3						1	是
+    5.用户界面增加“锁定、解锁”用户功能
+    6.建立系统参数设置表SQL
+      if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[KY_ParameterSetting]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+	drop table [dbo].[KY_ParameterSetting]
+	GO
+	CREATE TABLE [dbo].[KY_ParameterSetting] (
+		[ID] [int] IDENTITY (1, 1) NOT NULL ,
+		[DJKEY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+		[ACCOUNTNUM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+		[LXMC] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+		[LXZ] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+		[GLSZ_A] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+		[GLSZ_B] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+		[GLSZ_C] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+		[GLSZ_D] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+		[GLSZ_E] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+		[SFFZ] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+		[PXH] [int] NULL ,
+		[SFJMSZ] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL 
+	) ON [PRIMARY]
+	GO
+
+	ALTER TABLE [dbo].[KY_ParameterSetting] ADD 
+		CONSTRAINT [PK_KY_ParameterSetting] PRIMARY KEY  CLUSTERED 
+		(
+			[DJKEY]
+		)  ON [PRIMARY] 
+	GO
+
+
+
+2014.12.22
+
+    1.网站TB99增加“ZY”字段 Vc 50，摘要
+    2.修改网站视图VIEW_WZHT_TB99
+    
+    SELECT     dbo.TB99.AccountNum, dbo.TB99.XWBH, dbo.TB99.XWNR, dbo.TB99.XWFBZ, dbo.TB99.XWZBT, dbo.TB99.XWFBT, dbo.TB99.LMBH, dbo.TB99.CJSJ, 
+                      dbo.TB99.FBSJ, dbo.TB99.SCSJ, dbo.TB99.XGSJ, dbo.TB99.SSZT, dbo.TB99.DJCS, dbo.TB99.SFGG, dbo.TB99.SFRD, dbo.TB99.SFTZ, dbo.TB99.ZHFW, 
+                      dbo.TB99.SFTP, dbo.TB99.SYTP, dbo.TB99.SHRY, dbo.TB99.SHSJ, dbo.TB99.SHBZ, dbo.TB99.SXTS, dbo.TB99.TheLogoUrl, dbo.TB99.id, dbo.TB99.sftop, 
+                      dbo.TB02.LMMC, CASE isnull(shbz, '0') WHEN '0' THEN '未审核' WHEN '1' THEN '已通过' WHEN '-1' THEN '未通过' WHEN '4' THEN '已撤销' END AS BSMC, 
+                      CASE isnull(sftop, '0') WHEN '1' THEN '已置顶' WHEN '0' THEN '未置顶' END AS ZDMC, dbo.TB99.ZY
+FROM         dbo.TB99 LEFT OUTER JOIN
+                      dbo.TB02 ON dbo.TB99.LMBH = dbo.TB02.LMBH
+
+
+2014.12.27 框架增加微信数据表
+
+  CREATE TABLE [dbo].[Weixin_MenuModes](
+	[ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
+	[MenuKey] [varchar](50) NULL,
+	[MenuHftypy] [varchar](50) NULL,
+	[MenuHfCountType] [varchar](50) NULL,
+	[DataTable] [varchar](50) NULL,
+	[MenuHfCount] [int] NULL,
+	[AccountNum] [varchar](50) NULL,
+	[LLRYDWID] [varchar](50) NULL,
+	[LLRYDWMC] [varchar](50) NULL,
+	[LRRYZH] [varchar](50) NULL,
+	[LRRYXM] [varchar](50) NULL,
+	[LRSJ] [datetime] NULL
+	)
+
+CREATE TABLE [dbo].[WeiXin_Message](
+	[ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
+	[toUserName] [varchar](100) NULL,
+	[FromUserName] [varchar](50) NULL,
+	[CreateTime] [varchar](50) NULL,
+	[MsgType] [varchar](50) NULL,
+	[Content] [text] NULL,
+	[Location_X] [varchar](50) NULL,
+	[Location_Y] [varchar](50) NULL,
+	[Scale] [varchar](50) NULL,
+	[Label] [varchar](50) NULL,
+	[PicUrl] [varchar](50) NULL,
+	[MessageDateTime] [datetime] NULL
+)
+
+CREATE TABLE [dbo].[WeiXin_MessageWelcome](
+	[ID] [numeric](18, 0) NOT NULL,
+	[WelcomeContent] [varchar](200) NULL,
+	[AccountNum] [varchar](50) NULL,
+	[LLRYDWID] [varchar](50) NULL,
+	[LLRYDWMC] [varchar](50) NULL,
+	[LRRYZH] [varchar](50) NULL,
+	[LRRYXM] [varchar](50) NULL,
+	[LRSJ] [datetime] NULL,
+	[XH] [int] NULL
+)
+
+CREATE TABLE [dbo].[WeiXin_MessageXml](
+	[ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
+	[XMLContent] [text] NULL,
+	[MessageType] [varchar](50) NULL,
+	[MessageDateTime] [datetime] NULL
+	)
+	
+	
+	
+2014.12.31 
+   1.对框架所有页面分页条数进行统一
+   
+   
+2015.1.15
+   1.网站内容增加：tb99增加字段:BJ vc50(编辑),  LY vc50(来源)
+   
+   
+2015.1.26 选择性
+   1.框架字典数据表KY_ZD表增加“PYM”字段(拼音码)，VC  50
+   2.框架流程查看进行了重构
+   
+2015.1.30 
+   1.工作流跟踪图形页面，进行了重大美化升级
+     
+2015.2.5
+   1.登录机制进行了重构，解决了在个别IE6、IE7、IE8机器登录不了的问题，
+   2.增加"微信待办事务"页面列表，不具备处理功能
+   
+   
+2015.2.9 (*必须*)
+   1.解决待办事物业务标题问题，在Table80 、Table70增加字段"billname Vc50",业务标题名称
+   
+   

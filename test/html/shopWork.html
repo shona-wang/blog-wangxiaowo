@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<meta charset="UTF-8">
+		<title>门店工作</title>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">门店工作</h1>
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+				<span class="mui-icon mui-icon-left-nav"></span>返回
+			</button>
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left padL10">
+				关闭
+			</button>
+			<a class="mui-icon mui-icon-more mui-pull-right"></a>
+		</header>
+		<section class="mui-content">
+			<div class="shopPic">
+				<h2 class="shopWorker cMain">童掌柜</h2>
+				<img src="../img/logo.jpg" class="headPic" alt="头像" />
+			</div>
+
+			<div class="workerList">
+				<div class="disF marB10">
+					<div class="date today f24 textR marR10">
+						<b>今天</b>
+					</div>
+					<div class="detail cameraIcon">
+						<span class="mui-icon mui-icon-camera f40 cca fontB" onclick="location.href='workerDetail-addPhone.html'"></span>
+					</div>
+				</div>
+				<div class="disF marB10">
+					<div class="date f20 textR marR10">
+						<b>12日</b><sub>12月</sub>
+					</div>
+					<div class="workerDetail fle1">
+						<ul>
+							<li class="disIF wid100 marB10">
+								<img src="../img/1.jpg" alt="眼睛图片" />
+								<div class="fle1 marL10 posR">
+									<p class="c33 f12">378元</p>
+									<p class="c33 f12">菓菓爸 先生</p>
+									<p class="c33 f12">验光单、商品照片3张</p>
+									<p class="time f14 c33">上午 10:30</p>
+								</div>
+							</li>
+							<li class="disIF wid100 marB10">
+								<img src="../img/2.jpg" alt="眼睛图片" />
+								<div class="fle1 marL10 posR">
+									<p class="c33 f12">378元</p>
+									<p class="c33 f12">零售客户</p>
+									<p class="c33 f12">商品照片3张</p>
+									<p class="time f14 c33">下午 3:12</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="disF marB10">
+					<div class="date f20 textR marR10">
+						<b>11日</b><sub>11月</sub>
+					</div>
+					<div class="workerDetail fle1">
+						<ul>
+							<li class="disIF wid100">
+								<img src="../img/3.jpg" alt="眼睛图片" />
+								<div class="fle1 marL10 posR">
+									<p class="c33 f12">378元</p>
+									<p class="c33 f12">零售客户</p>
+									<p class="c33 f12">验光单</p>
+									<p class="time f14 c33">上午 10:30</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</section>
+		<nav class="mui-bar mui-bar-tab">
+			<a style="cursor: pointer;"class="mui-tab-item mui-active bg00 cff borR00" href="shopWork.html">
+				<!--<span class="mui-icon mui-icon-home"></span>-->
+				<span class="mui-tab-label">门店工作</span>
+			</a>
+			<a class="mui-tab-item borRcc" href="customerFiles.html">
+				<!--<span class="mui-icon mui-icon-extra mui-icon-extra-order"></span>-->
+				<span class="mui-tab-label">客户档案</span>
+			</a>
+			<a class="mui-tab-item bor0" href="more.html">
+				<!--<span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>-->
+				<span class="mui-tab-label">更多</span>
+			</a>
+		</nav>
+		<script src="../js/mui.min.js"></script>
+	</body>
+</html>
+<script type="text/javascript">
+	mui('body').on('tap','a',function(){document.location.href=this.href;});
+</script>

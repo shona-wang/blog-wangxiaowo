@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="wrap.aspx.cs" Inherits="cms_service_wrap" %>

@@ -1,0 +1,6 @@
+{
+  "index":"home",
+  "blog":"blogList",
+  "ui":"ui",
+  "wrap/:year/:month/:day/:filename/:comment" :"wrap"
+}

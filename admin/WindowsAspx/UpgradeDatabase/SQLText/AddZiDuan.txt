@@ -1,0 +1,276 @@
+﻿/*2.为数据表增加字段*/
+if exists (select * from syscolumns where id=object_id('Display_Zb') and name='XH')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table Display_Zb add  XH int 
+end
+
+if exists (select * from syscolumns where id=object_id('dbo.sysGroupPower') and name='parentid')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table dbo.sysGroupPower add parentid Varchar(50)	
+end
+    
+if exists (select * from syscolumns where id=object_id('dbo.sysGroupPower') and name='Target')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table dbo.sysGroupPower add Target   Varchar(50)	 	
+end
+    
+if exists (select * from syscolumns where id=object_id('dbo.sysGroupPower') and name='LRXGRY')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table dbo.sysGroupPower add LRXGRY  Varchar(50)	 	
+end
+   
+if exists (select * from syscolumns where id=object_id('dbo.sysGroupPower') and name='LRXGSJ')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table dbo.sysGroupPower add LRXGSJ  datetime	 	
+end
+
+if exists (select * from syscolumns where id=object_id('sysEmpRoles')     and     name='LRXGRY')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table sysEmpRoles add LRRYZH  Varchar(50) 	
+end
+    
+if exists (select * from syscolumns where id=object_id('sysEmpRoles')     and     name='LRSJ')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table sysEmpRoles add LRSJ  datetime 	
+end
+     
+if exists (select * from syscolumns where id=object_id('sysRolesDic')     and     name='LRRYZH')  
+print    
+'存在'
+else  begin print '不存在' 
+alter table sysRolesDic  add LRRYZH  Varchar(50)
+end
+
+if exists (select * from syscolumns where id=object_id('sysRolesDic')     and     name='LRSJ')  
+print    
+'存在'
+else  begin print '不存在' 
+    alter table sysRolesDic add LRSJ  datetime	
+end
+    
+    
+if exists (select * from syscolumns where id=object_id('Table38')     and     name='FJDDM')  
+print    
+'存在'
+else  begin print '不存在' 
+    alter table Table38  add FJDDM    Varchar(50)	
+end
+ 
+    
+if    
+exists     (select     *     from     syscolumns     where    
+id=object_id('Table38')     and     name='xh')  
+print    
+'存在'
+else  begin print '不存在' 
+    alter table Table38 add xh      int
+end
+
+if    
+exists     (select     *     from     syscolumns     where    
+id=object_id('Table38')     and     name='JD')  
+print    
+'存在'
+else  begin print '不存在' 
+    alter table Table38 add JD      Varchar(50)
+end
+
+
+if    
+exists     (select     *     from     syscolumns     where    
+id=object_id('Table38')     and     name='WD')  
+print    
+'存在'
+else  begin print '不存在' 
+    alter table Table38 add WD      Varchar(50)
+end
+
+
+
+if exists (select * from syscolumns where    
+id=object_id('RYDJ')     and     name='SJFW')  
+print    
+'存在'
+else  begin print '不存在' 
+    alter table RYDJ add SJFW  Varchar(50)
+end  
+
+if exists (select * from syscolumns where    
+id=object_id('RYDJ')     and     name='Relatedyhm')  
+print    
+'存在'
+else  begin print '不存在' 
+    alter table RYDJ add Relatedyhm  Varchar(30)
+end  
+
+if exists (select * from syscolumns where    
+id=object_id('RYDJ')     and     name='LXDH')  
+print    
+'存在'
+else  begin print '不存在' 
+    alter table RYDJ add LXDH  Varchar(30)
+end 
+
+
+
+
+/*3.跟新数据表的字段值*/
+  
+  update rydj set sjfw='QB' Where yhm='admin'
+  update rydj set sjfw='BR' Where yhm<>'admin'
+  update rydj set Relatedyhm=yhm
+  update Display_Zb Set buttonid=''
+  update  table38 set fjddm='0' where lx=1 
+  update  table38 set fjddm=left(jddm,len(jddm)-2) where lx=0 
+--修改数据表字段
+  
+
+
+
+/*4.重新建立视图*/
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[ST_RYDJ]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[ST_RYDJ]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[ST_TABLE38]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[ST_TABLE38]
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE VIEW dbo.ST_RYDJ
+AS
+SELECT     dbo.RYDJ.yhm, dbo.RYDJ.yhmm, dbo.RYDJ.xx, dbo.RYDJ.zw, dbo.RYDJ.dw, dbo.RYDJ.lrxgry, dbo.RYDJ.DeleteBs, dbo.RYDJ.SRM, 
+                      dbo.RYDJ.MACID, CASE WHEN isnull(dbo.RYDJ.SFBD, '') = 1 THEN '是' ELSE '否' END AS sfbd, CASE WHEN isnull(dbo.TABLE39.SF, '') 
+                      = 1 THEN '是' ELSE '否' END AS SF, CASE WHEN isnull(dbo.TABLE39.SF_1, '') = 1 THEN '是' ELSE '否' END AS SF_1, 
+                      CASE WHEN isnull(dbo.TABLE39.SF_2, '') = 1 THEN '是' ELSE '否' END AS SF_2, CASE WHEN isnull(dbo.TABLE39.SF_3, '') 
+                      = 1 THEN '是' ELSE '否' END AS SF_3, dbo.TABLE38.DWID, dbo.TABLE38.BM, dbo.TABLE38.mc AS DWMC, dbo.TABLE38.lx, dbo.TABLE38.JDDM, 
+                      dbo.TABLE37.mc AS ZWMC, dbo.RYDJ.AccountNum,Relatedyhm,, dbo.RYDJ.SJFW, dbo.RYDJ.LXDH, dbo.RYDJ.lrxgryzh
+FROM         dbo.RYDJ LEFT OUTER JOIN
+                      dbo.TABLE39 ON dbo.RYDJ.yhm = dbo.TABLE39.yhm AND dbo.RYDJ.AccountNum = dbo.TABLE39.AccountNum LEFT OUTER JOIN
+                      dbo.TABLE38 ON dbo.TABLE39.DWID = dbo.TABLE38.DWID AND dbo.TABLE39.AccountNum = dbo.TABLE38.AccountNum LEFT OUTER JOIN
+                      dbo.TABLE37 ON dbo.TABLE39.ZWID = dbo.TABLE37.zwid AND dbo.TABLE39.AccountNum = dbo.TABLE37.AccountNum
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE VIEW dbo.ST_TABLE38
+AS
+SELECT     dbo.TABLE38.AccountNum, dbo.TABLE38.DWID, dbo.TABLE38.BM AS BMBM, dbo.TABLE38.mc AS BMMC, dbo.TABLE38.lx, dbo.TABLE38.dz, 
+                      dbo.TABLE38.zyyw, dbo.TABLE38.dh, dbo.TABLE38.lxR, dbo.TABLE38.wz, dbo.TABLE38.qt, dbo.TABLE38.JDDM, dbo.TABLE38.FJDDM AS FID, 
+                      T1.mc AS FJDDMText, dbo.TABLE38.lrxgsj, dbo.TABLE38.lrxgryzh, dbo.TABLE38.xh, dbo.TABLE38.JD, dbo.TABLE38.WD
+FROM         dbo.TABLE38 LEFT OUTER JOIN
+                          (SELECT     mc, JDDM, AccountNum
+                            FROM          dbo.TABLE38 AS TABLE38_1
+                            GROUP BY mc, JDDM, AccountNum) AS T1 ON dbo.TABLE38.FJDDM = T1.JDDM AND dbo.TABLE38.AccountNum = T1.AccountNum
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+2014.09.11 框架大更新,把框架的字段全部更新为大写，并且每个字段增加了字段说明
+
+	1.table37 表所有的字段改为大写
+	  并且将原来的系统字段替换为
+	  LRRYZH	varchar(50)	Checked
+	  LRRYXM	varchar(50)	Checked
+	  LRSJ	datetime	Checked
+	  LLRYDWID	varchar(50)	Checked
+	  LLRYDWMC	varchar(50)	Checked
+	  ACCOUNTNUM	varchar(50)	Checked
+
+	  update table37 set Accountnum='009'
+
+	2.sysRolesDic 表所有的字段改为大写
+	  并且将原来的系统字段替换为
+	  LRRYZH	varchar(50)	Checked
+	  LRRYXM	varchar(50)	Checked
+	  LRSJ	datetime	Checked
+	  LLRYDWID	varchar(50)	Checked
+	  LLRYDWMC	varchar(50)	Checked
+	  ACCOUNTNUM	varchar(50)	Checked
+	  
+	  update sysRolesDic set Accountnum='009',KFDM='009'
+
+
+	3.Table38 表所有的字段改为大写
+	  并且将原来的系统字段替换为
+	  LRRYZH	varchar(50)	Checked
+	  LRRYXM	varchar(50)	Checked
+	  LRSJ	datetime	Checked
+	  LLRYDWID	varchar(50)	Checked
+	  LLRYDWMC	varchar(50)	Checked
+	  ACCOUNTNUM	varchar(50)	Checked
+	  update Table38 set Accountnum='009'
+	  修改视图ST_TABLE38:TABLE38.LRSJ, dbo.TABLE38.LRRYZH字段
+
+	4.RYDJ表所有的字段改为大写
+	  并且将原来的系统字段替换为
+	  LRRYZH	varchar(50)	Checked
+	  LRRYXM	varchar(50)	Checked
+	  LRSJ	datetime	Checked
+	  LLRYDWID	varchar(50)	Checked
+	  LLRYDWMC	varchar(50)	Checked
+	  ACCOUNTNUM	varchar(50)	Checked
+	  update RYDJ set Accountnum='009'
+	  修改视图ST_RYDJ：RYDJ.LRSJ, RYDJ.LRRYZH字段
+
+	5.Table39 表所有的字段改为大写
+	  并且将原来的系统字段替换为
+	  LRRYZH	varchar(50)	Checked
+	  LRRYXM	varchar(50)	Checked
+	  LRSJ	datetime	Checked
+	  LLRYDWID	varchar(50)	Checked
+	  LLRYDWMC	varchar(50)	Checked
+	  ACCOUNTNUM	varchar(50)	Checked
+	  update Table39 set Accountnum='009'
+
+	6.sysEmpRoles 表所有的字段改为大写
+	  并且将原来的系统字段替换为
+	  LRRYZH	varchar(50)	Checked
+	  LRRYXM	varchar(50)	Checked
+	  LRSJ	datetime	Checked
+	  LLRYDWID	varchar(50)	Checked
+	  LLRYDWMC	varchar(50)	Checked
+	  ACCOUNTNUM	varchar(50)	Checked
+	  update sysEmpRolesset Accountnum='009'
+
+
+
+--1.如果在操作“用户权限设置时”出现无法保持的错误。
+--解决办法:把”sysEmpRoles“表的”PKID“字段有原来的int类型字段增长，改为varchar50
+--2.把人员登记的“SRM”数据类型varcahr 50 改为 int类型 20140611
+--2014.06.30在miniui的“scripts”里的icons.css增加样式:
+--.icon-home
+--{
+--    background:url(icons/z_home.png) no-repeat;    
+--}
+--icons增加图片:z_home.png

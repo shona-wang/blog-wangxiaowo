@@ -1,0 +1,13 @@
+<script type="text/javascript">
+  var href= location.href,
+  list = href.split(".");
+  var domain=list[0];
+  if(domain.indexOf("www")>=0 || domain.indexOf("wangxiaowo")>=0 || domain.indexOf("王小窝")>=0){
+    href=href+"site/index.html#index";
+  }else if(domain.indexOf("img")>=0){
+    href= href+"img/index.html";
+  }else if(domain.indexOf("admin")>=0){
+    href=href+"admin/WindowsAspx/Login.aspx";
+  }
+  window.location.href=href;
+</script>

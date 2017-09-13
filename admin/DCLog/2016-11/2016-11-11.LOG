@@ -1,0 +1,183 @@
+2016-11-11 19:27:28,171 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject, Boolean withFailover)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject, Boolean withFailover)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 144
+2016-11-11 19:27:28,200 [DEBUG] 
+ -- 错误信息
+System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 150
+   在 KY.DataHelper.DataHelper.SqlGetDataTable(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 230
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct& sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 KY.ERPOffice.Common.MyDataHelper.MyObject(String ObjectName, Object[] SQLparameters) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\MyDataHelper.cs:行号 66
+2016-11-11 19:27:29,080 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 144
+2016-11-11 19:27:29,120 [DEBUG] 
+ -- 错误信息
+System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 150
+   在 KY.DataHelper.DataHelper.SqlGetDataTable(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 230
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct& sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 KY.ERPOffice.Common.MyDataHelper.MyObject(String ObjectName, Object[] SQLparameters) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\MyDataHelper.cs:行号 66
+2016-11-11 19:31:01,902 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject, Boolean withFailover)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject, Boolean withFailover)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 144
+2016-11-11 19:31:01,922 [DEBUG] 
+ -- 错误信息
+System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 150
+   在 KY.DataHelper.DataHelper.SqlGetDataTable(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 230
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct& sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 KY.ERPOffice.Common.MyDataHelper.MyObject(String ObjectName, Object[] SQLparameters) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\MyDataHelper.cs:行号 66
+2016-11-11 19:31:01,947 [DEBUG] 
+ -- 错误信息
+System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 150
+   在 KY.DataHelper.DataHelper.SqlGetDataTable(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 230
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 KY.ERPOffice.Common.MyDataHelper.MyObject(String ObjectName, Object[] SQLparameters) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\MyDataHelper.cs:行号 76
+   在 KY.ERPOffice.Common.pub_BLL.GetDataTable(String SqlText) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\pub_BLL.cs:行号 520
+   在 KY.ERPOffice.DAL.Rydj_DAL.UserLogin(String data) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\Rydj_DAL.cs:行号 165
+2016-11-11 19:31:01,966 [DEBUG] 
+ -- 错误信息
+System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 150
+   在 KY.DataHelper.DataHelper.SqlGetDataTable(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 230
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 KY.ERPOffice.DAL.Rydj_DAL.UserLogin(String data) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\Rydj_DAL.cs:行号 254
+   在 KY.ERPOffice.BLL.Rydj_BLL.UserLogin(String data) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\BLL\Rydj_BLL.cs:行号 33
+   在 WindowsAspx_Login_Data.RepeatLogin() 位置 f:\c#Web\blogService\web\WindowsAspx\Login_Data.aspx.cs:行号 64
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct& sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 WindowsAspx_Login_Data.Page_Load(Object sender, EventArgs e) 位置 f:\c#Web\blogService\web\WindowsAspx\Login_Data.aspx.cs:行号 24
+2016-11-11 19:31:02,177 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 144
+2016-11-11 19:31:02,212 [DEBUG] 
+ -- 错误信息
+System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 150
+   在 KY.DataHelper.DataHelper.SqlGetDataTable(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 230
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct& sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 KY.ERPOffice.Common.MyDataHelper.MyObject(String ObjectName, Object[] SQLparameters) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\MyDataHelper.cs:行号 66
+2016-11-11 19:31:02,223 [DEBUG] 
+ -- 错误信息
+System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 150
+   在 KY.DataHelper.DataHelper.SqlGetDataTable(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 230
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 KY.ERPOffice.Common.MyDataHelper.MyObject(String ObjectName, Object[] SQLparameters) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\MyDataHelper.cs:行号 76
+   在 KY.ERPOffice.Common.pub_BLL.GetDataTable(String SqlText) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\pub_BLL.cs:行号 520
+   在 KY.ERPOffice.DAL.Rydj_DAL.UserLogin(String data) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\Rydj_DAL.cs:行号 165
+2016-11-11 19:31:02,479 [DEBUG] 
+ -- 错误信息
+System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 150
+   在 KY.DataHelper.DataHelper.SqlGetDataTable(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 230
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 KY.ERPOffice.DAL.Rydj_DAL.UserLogin(String data) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\Rydj_DAL.cs:行号 254
+   在 KY.ERPOffice.BLL.Rydj_BLL.UserLogin(String data) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\BLL\Rydj_BLL.cs:行号 33
+   在 WindowsAspx_Login_Data.RepeatLogin() 位置 f:\c#Web\blogService\web\WindowsAspx\Login_Data.aspx.cs:行号 64
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct& sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 WindowsAspx_Login_Data.Page_Load(Object sender, EventArgs e) 位置 f:\c#Web\blogService\web\WindowsAspx\Login_Data.aspx.cs:行号 24
+2016-11-11 21:25:24,971 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject, Boolean withFailover)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject, Boolean withFailover)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 144
+2016-11-11 21:25:25,000 [DEBUG] 
+ -- 错误信息
+System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
+   在 KY.DataHelper.DataHelper.Open() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 150
+   在 KY.DataHelper.DataHelper.SqlGetDataTable(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 230
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct& sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 KY.ERPOffice.Common.MyDataHelper.MyObject(String ObjectName, Object[] SQLparameters) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\MyDataHelper.cs:行号 66

@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Pic_Upload_data.aspx.cs" Inherits="HomePage_Manage_Pic_Upload_data" %>

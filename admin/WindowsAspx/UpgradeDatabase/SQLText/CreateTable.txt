@@ -1,0 +1,294 @@
+﻿/*1.建表*/
+/* 按钮表建立*/
+if exists (select * from sysobjects where id = object_id('sysButtonCtion'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[sysButtonCtion] (
+	[ID] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[Guid] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[ButtonName] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ButtonTiele] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ButtonMin] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Buttonicon] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ButtonRemak] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[CJSJ] [datetime] NULL ,
+	[CJZH] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ButtoniconName] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+insert Into sysButtonCtion values('Button-20140124-00001','增加','增加','Add','icon-add','通用','009','2014-2-26 8:49:06','admin','add.gif')
+insert Into sysButtonCtion values('Button-20140220-00001','设计','设计','click','icon-expand','报表设计管理','009','2014-2-20 10:00:42','admin','expand.gif')
+insert Into sysButtonCtion values('Button-20140220-00002','删除根节点','删除根节点','click','icon-expand','组织机构管理','009','2014-2-20 10:02:40','admin','expand.gif')
+insert Into sysButtonCtion values('Button-20140220-00003','管理范围设置','管理范围设置','click','icon-collapse','用户权限设置','009','2014-2-20 15:08:01','admin','collapse.gif')
+insert Into sysButtonCtion values('Button-20140218-00009','用户角色设置','用户角色设置','click','icon-lock','用户权限设置','009','2014-2-20 15:33:52','lln','lock.png')
+insert Into sysButtonCtion values('Button-20140227-00001','上移','上移','click','icon-collapse','通用','009','2014-2-27 9:15:30','admin','collapse.gif')
+insert Into sysButtonCtion values('Button-20140227-00002','下移','下移','click','icon-collapse','通用','009','2014-2-27 9:15:50','admin','collapse.gif')
+insert Into sysButtonCtion values('Button-20140227-00003','操作保存','操作保存','click','icon-date','通用','009','2014-2-27 9:48:18','admin','date.gif')
+insert Into sysButtonCtion values('Button-20140227-00004','排序保存','排序保存','click','icon-collapse','通用','009','2014-2-27 9:48:48','admin','collapse.gif')
+insert Into sysButtonCtion values('Button-20140124-00002','编辑','编辑','Edit','icon-addnew','通用','009','2014-2-18 17:12:22','admin','addnew.gif')
+insert Into sysButtonCtion values('Button-20140124-00003','删除','删除','Delete','icon-remove','通用','009','2014-2-18 17:12:36','admin','remove.gif')
+insert Into sysButtonCtion values('Button-20140218-00001','设置密码','设置密码','click','icon-user','人员管理','009','2014-2-18 17:12:58','admin','user.png')
+insert Into sysButtonCtion values('Button-20140218-00002','设置部门','设置部门','click','icon-add','人员管理','009','2014-2-18 17:13:12','admin','add.gif')
+insert Into sysButtonCtion values('Button-20140218-00003','设置角色','设置角色','click','icon-collapse','人员管理','009','2014-2-18 17:13:23','admin','collapse.gif')
+insert Into sysButtonCtion values('Button-20140218-00004','设置用户','设置用户','click','icon-collapse','角色管理','009','2014-2-18 17:15:15','admin','collapse.gif')
+insert Into sysButtonCtion values('Button-20140218-00005','保存','保存','click','icon-save','通用','009','2014-2-18 17:16:48','admin','save.gif')
+insert Into sysButtonCtion values('Button-20140218-00006','关联按钮','关联按钮','click','icon-collapse','菜单管理','009','2014-2-18 17:18:59','admin','collapse.gif')
+insert Into sysButtonCtion values('Button-20140218-00007','查询','查询','click','icon-zoomout','通用','009','2014-2-18 17:20:39','admin','zoomout.gif')
+insert Into sysButtonCtion values('Button-20140218-00008','用户权限批量设置','用户权限批量设置','click','icon-lock','用户权限设置','009','2014-2-18 17:21:20','admin','lock.png')
+insert Into sysButtonCtion values('Button-20140218-00010','用户权限设置','用户权限设置','click','icon-edit','用户权限设置','009','2014-2-18 17:23:43','admin','edit.gif')
+insert Into sysButtonCtion values('Button-20140218-00011','设置权限','设置权限','click','icon-edit','角色权限设置','009','2014-2-18 17:27:49','admin','edit.gif')
+insert Into sysButtonCtion values('Button-20140218-00012','设置用户','设置用户','click','icon-downgrade','角色权限设置','009','2014-2-18 17:28:14','admin','downgrade.gif')
+insert Into sysButtonCtion values('Button-20140504-00001','刷新','刷新','click','icon-reload','通用','009','2014-2-18 17:28:14','admin','reload.png')
+End
+
+/*组织机构权限表建立*/
+if exists (select * from sysobjects where id = object_id('SysGroupPowerOrganization'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[SysGroupPowerOrganization] (
+	[ID] [int] IDENTITY (1, 1) NOT NULL ,
+	[FuncID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[parentid] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Target] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[DWID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[KFDM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRXGRY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRXGSJ] [datetime] NULL 
+) ON [PRIMARY]
+End
+
+--**职位权限表建立*/
+if exists (select * from sysobjects where id = object_id('SysGroupPowerPositiion'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[SysGroupPowerPositiion] (
+	[ID] [int] IDENTITY (1, 1) NOT NULL ,
+	[FuncID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[parentid] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Target] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ZWID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[KFDM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRXGRY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRXGSJ] [datetime] NULL 
+) ON [PRIMARY]
+End
+
+
+/*用户权限表建立*/
+if exists (select * from sysobjects where id = object_id('SysGroupPowerUser'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[SysGroupPowerUser] (
+	[ID] [int] IDENTITY (1, 1) NOT NULL ,
+	[FuncID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[parentid] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Target] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Userid] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[KFDM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRXGRY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRXGSJ] [datetime] NULL 
+) ON [PRIMARY]
+End
+
+/*字典表建立*/
+if exists (select * from sysobjects where id = object_id('KY_ZD'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[KY_ZD] (
+	[ID] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[DJBH] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[MC] [varchar] (100) COLLATE Chinese_PRC_CI_AS NULL ,
+	[YWLX] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[YWLXMC] [varchar] (100) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRRY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRSJ] [datetime] NULL ,
+	[XH] [int] NULL ,
+	[BZ] [varchar] (100) COLLATE Chinese_PRC_CI_AS NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+End
+
+/*附件表建立*/
+if exists (select * from sysobjects where id = object_id('KY_FJ'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[KY_FJ] (
+	[id] [int] IDENTITY (1, 1) NOT NULL ,
+	[DocId] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[DocBh] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[Docname] [nvarchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[DocSIZE] [bigint] NULL ,
+	[FType] [nvarchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[FPath] [varchar] (250) COLLATE Chinese_PRC_CI_AS NULL ,
+	[SFML] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRRY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRSJ] [datetime] NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+End
+
+/*消息表建立*/
+if exists (select * from sysobjects where id = object_id('BaseMessage'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[BaseMessage] (
+	[ID] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[XXLX] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[XXLXMC] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LTXXZT] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[XXNR] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[URL] [varchar] (100) COLLATE Chinese_PRC_CI_AS NULL ,
+	[JSUserid] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[JSName] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[XXZT] [char] (1) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LLRYDWID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LLRYDWMC] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRRYZH] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRRYXM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRSJ] [datetime] NULL ,
+	[AccountNum] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+End
+
+
+/*Tree字典表建立*/
+if exists (select * from sysobjects where id = object_id('KY_ZD_Tree'))
+PRINT '存在' 
+ELSE 
+begin
+PRINT'不存在'
+CREATE TABLE [dbo].[KY_ZD_Tree](
+    [ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
+	[JDDM] [varchar](50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[JDMC] [varchar](50) NULL,
+	[FJDDM] [varchar](50) NULL,
+	[DM] [varchar](50) NULL,
+	[XH] [varchar](50) NULL,
+	[YWLX] [varchar](50) NULL,
+	[YWLXMC] [varchar](50) NULL,
+	[LRRY] [varchar](50) NULL,
+	[LRSJ] [datetime] NULL,
+	[ACCOUNTNUM] [varchar](50) NULL
+) ON [PRIMARY]
+ALTER TABLE [dbo].[KY_ZD_Tree] ADD 
+	CONSTRAINT [PK_KY_ZD_Tree] PRIMARY KEY  CLUSTERED 
+	(
+		[JDDM]
+	)  ON [PRIMARY] 
+End
+
+
+/*2014.09.11 动态表单设置表建立,此更新只是SQLServer的*/
+
+--表单属性表KY_Modes
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[KY_Modes]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[KY_Modes]
+GO
+CREATE TABLE [dbo].[KY_Modes] (
+	[ID] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[DJKEY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[KJID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[KJMS] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[KJLX] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ZDCD] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[SFWK] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[KJGD] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[SFHB] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[XSSX] [int] NULL ,
+	[SJY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[GLZDBM] [varchar] (200) COLLATE Chinese_PRC_CI_AS NULL ,
+	[SFXS] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[SFJSHJ] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[JSGS] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[HZZD] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[MRZ] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[SFXY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[XYFS] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LBSFXS] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[FL] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRRYZH] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRRYXM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRSJ] [datetime] NULL ,
+	[LLRYDWID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LLRYDWMC] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ACCOUNTNUM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[KY_Modes] ADD 
+	CONSTRAINT [PK_KY_Modes] PRIMARY KEY  CLUSTERED 
+	(
+		[DJKEY]
+	)  ON [PRIMARY] 
+GO
+
+--KY_ModesType实体数据表
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[KY_ModesType]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[KY_ModesType]
+GO
+
+CREATE TABLE [dbo].[KY_ModesType] (
+	[ID] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[JDDM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[FJDDM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[TEXT] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[IMAGE] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[WIDTH] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[HEIGTH] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[XH] [int] NULL ,
+	[ACCOUNTNUM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+GO
+
+
+--UserInformation用户附件信息表
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[UserInformation]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[UserInformation]
+GO
+CREATE TABLE [dbo].[UserInformation] (
+	[ID] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[DJKEY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[SFDY] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[YHM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[XX] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[JG] [varchar] (100) COLLATE Chinese_PRC_CI_AS NULL ,
+	[NL] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[SFZH] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[BYSJ] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ZW] [varchar] (100) COLLATE Chinese_PRC_CI_AS NULL ,
+	[XZZ] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[JTZZ] [varchar] (100) COLLATE Chinese_PRC_CI_AS NULL ,
+	[BZ] [varchar] (200) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRRYZH] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRRYXM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LRSJ] [datetime] NULL ,
+	[LLRYDWID] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[LLRYDWMC] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ACCOUNTNUM] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[UserInformation] ADD 
+	CONSTRAINT [PK_UserInformation] PRIMARY KEY  CLUSTERED 
+	(
+		[DJKEY]
+	)  ON [PRIMARY] 
+GO
+

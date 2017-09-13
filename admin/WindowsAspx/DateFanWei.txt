@@ -1,0 +1,6 @@
+﻿[
+   {id:'QB',text:'全部'},
+   {id:'XSBM',text:'下属部门(含本部门)'},
+   {id:'SZBM',text:'所在部门'},
+   {id:'BR',text:'仅本人'}
+]

@@ -1,0 +1,102 @@
+2015-08-06 16:53:12,478 [DEBUG] 
+ -- 错误信息
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.End()
+   在 System.Web.HttpResponse.Redirect(String url, Boolean endResponse)
+   在 System.Web.HttpResponse.Redirect(String url)
+   在 KY.ERPOffice.Common.MyPublicMin.Redirect() 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\Common\MyPublicMin.cs:行号 700
+   在 Flows_Flows_Data.Page_Load(Object sender, EventArgs e) 位置 e:\工作\信安网络学院\web\Flows\Flows_Data.aspx.cs:行号 30
+2015-08-06 16:55:27,919 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 将截断字符串或二进制数据。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 KY.DataHelper.DataHelper.SqlExecute(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 175
+2015-08-06 17:01:51,476 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 将截断字符串或二进制数据。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 KY.DataHelper.DataHelper.SqlExecute(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 175
+2015-08-06 17:01:54,548 [DEBUG] 
+ -- 错误信息
+System.InvalidCastException: 无法将类型为“System.String”的对象强制转换为类型“System.Collections.ArrayList”。
+   在 KY.ERPOffice.DAL.DisplayZb_DAL.UpDisplay_Zb_XuHao(String json) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\DisplayZb_DAL.cs:行号 179
+2015-08-06 17:02:09,282 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 将截断字符串或二进制数据。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 KY.DataHelper.DataHelper.SqlExecute(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 175
+2015-08-06 18:02:09,671 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 将截断字符串或二进制数据。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 KY.DataHelper.DataHelper.SqlExecute(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 175
+2015-08-06 18:02:15,867 [DEBUG] 
+ -- 错误信息
+System.InvalidCastException: 无法将类型为“System.String”的对象强制转换为类型“System.Collections.ArrayList”。
+   在 KY.ERPOffice.DAL.DisplayZb_DAL.UpDisplay_Zb_XuHao(String json) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\DisplayZb_DAL.cs:行号 179
+2015-08-06 18:02:46,286 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 将截断字符串或二进制数据。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 KY.DataHelper.DataHelper.SqlExecute(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 175
+2015-08-06 18:03:32,345 [DEBUG] 
+ -- 错误信息
+System.Data.SqlClient.SqlException: 将截断字符串或二进制数据。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 KY.DataHelper.DataHelper.SqlExecute(String sqlStr) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY.DataHelper\DataHelper.cs:行号 175
+2015-08-06 18:03:39,950 [DEBUG] 
+ -- 错误信息
+System.InvalidCastException: 无法将类型为“System.String”的对象强制转换为类型“System.Collections.ArrayList”。
+   在 KY.ERPOffice.DAL.DisplayZb_DAL.UpDisplay_Zb_XuHao(String json) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\DisplayZb_DAL.cs:行号 179
+2015-08-06 18:11:03,045 [DEBUG] 
+ -- 错误信息
+System.InvalidCastException: 无法将类型为“System.String”的对象强制转换为类型“System.Collections.ArrayList”。
+   在 KY.ERPOffice.DAL.DisplayZb_DAL.UpDisplay_Zb_XuHao(String json) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\DisplayZb_DAL.cs:行号 179
+2015-08-06 18:11:24,521 [DEBUG] 
+ -- 错误信息
+System.InvalidCastException: 无法将类型为“System.String”的对象强制转换为类型“System.Collections.ArrayList”。
+   在 KY.ERPOffice.DAL.DisplayZb_DAL.UpDisplay_Zb_XuHao(String json) 位置 E:\51程序\MIniUI资料\MiKYKJ_Web\KY_ERPOffice\DAL\DisplayZb_DAL.cs:行号 179
